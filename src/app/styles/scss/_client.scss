@@ -1,0 +1,431 @@
+/*** 
+
+====================================================================
+  Client Section
+====================================================================
+
+***/
+
+.client-section {
+	position: relative;
+	padding: 100px 0;
+	background-color: var(--theme-color-white);
+	z-index: 3;
+	@include media-breakpoint-down(md) {
+		padding: 60px 0;
+	}
+
+	.shape-4 {
+		position: absolute;
+		top: 0;
+		left: -77px;
+		@include for-xxl {
+			display: none;
+		}
+	}
+	.outer-box {
+		position: relative;
+		border: 1px solid #e6e0fa;
+		padding: 31px 38px;
+		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+			padding: 25px 15px;
+		}
+		.title-box {
+			position: relative;
+			max-width: 216px;
+			flex-shrink: 0;
+			display: flex;
+			align-items: flex-end;
+			padding-right: 40px;
+			margin-right: 25px;
+			@include media-breakpoint-down(lg) {
+				padding-right: 0;
+				margin-right: 0;
+				max-width: 100%;
+				margin-bottom: 30px;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1px;
+				height: 100%;
+				background-color: #e6e0fa;
+				@include media-breakpoint-down(lg) {
+					display: none;
+				}
+			}
+			.title {
+				margin-bottom: 0;
+				@include media-breakpoint-down(lg) {
+					br {
+						display: none;
+					}
+				}
+				@include media-breakpoint-down(sm) {
+					font-size: 18px;
+				}
+			}
+			.icon {
+				position: relative;
+				margin-left: 20px;
+				color: var(--theme-color1);
+				font-size: 16px;
+			}
+		}
+		.marquee-box {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			.marquee {
+				position: relative;
+				@include flex-between;
+				gap: 90px;
+				animation: marquee 10s linear infinite;
+				@include media-breakpoint-down(sm) {
+					gap: 40px;
+				}
+			}
+		}
+	}
+}
+.style-client {
+	padding: 80px 0;
+	@include media-breakpoint-down(lg) {
+		padding: 30px 0;
+	}
+}
+.client-block {
+	position: relative;
+	max-width: 100%;
+	flex-shrink: 0;
+	.image {
+		margin-bottom: 0;
+	}
+}
+
+/*** 
+
+====================================================================
+  Client Section Two
+====================================================================
+
+***/
+
+.client-section-two {
+	position: relative;
+	padding: 20px 30px 0;
+	z-index: 3;
+	@include media-breakpoint-down(xl) {
+		padding: 20px 15px 0;
+	}
+	@include media-breakpoint-down(md) {
+		padding-top: 0;
+	}
+	@include media-breakpoint-down(sm) {
+		padding: 0;
+	}
+	.outer-box {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: 58px 135px;
+		border-radius: 20px;
+		background: var(--theme-color3);
+		@include media-breakpoint-down(xl) {
+			padding: 50px 30px;
+		}
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+			padding: 25px 15px;
+		}
+		@include media-breakpoint-down(sm) {
+			border-radius: 0;
+		}
+		.title-box {
+			position: relative;
+			max-width: 216px;
+			flex-shrink: 0;
+			display: flex;
+			align-items: flex-end;
+			padding-right: 40px;
+			margin-right: 25px;
+			@include media-breakpoint-down(lg) {
+				padding-right: 0;
+				margin-right: 0;
+				max-width: 100%;
+				margin-bottom: 30px;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1px;
+				height: 100%;
+				background-color: #e6e0fa;
+				@include media-breakpoint-down(lg) {
+					display: none;
+				}
+			}
+			.title {
+				margin-bottom: 0;
+				color: var(--theme-color-white);
+				@include media-breakpoint-down(xl) {
+					br {
+						display: none;
+					}
+				}
+				@include media-breakpoint-down(lg) {
+					font-size: 18px;
+				}
+			}
+			.icon {
+				position: relative;
+				margin-left: 20px;
+				color: var(--theme-color2);
+				font-size: 16px;
+				cursor: pointer;
+			}
+		}
+		.marquee-box {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			.marquee {
+				position: relative;
+				@include flex-between;
+				gap: 128px;
+				animation: marquee 10s linear infinite;
+				@include media-breakpoint-down(sm) {
+					gap: 40px;
+				}
+			}
+		}
+	}
+	.client-block {
+		@include media-breakpoint-down(sm) {
+			.image {
+				img {
+					width: 50px;
+				}
+			}
+		}
+	}
+}
+.style-brand {
+	position: relative;
+	padding: 20px 0px 0 170px;
+	z-index: 3;
+	@include for-xxl {
+		padding: 20px 0px 0 0px;
+	}
+	@include media-breakpoint-down(xxl) {
+		padding: 20px 0px 0 0px;
+	}
+}
+
+/*** 
+
+====================================================================
+  Client Section Three
+====================================================================
+
+***/
+
+.client-section-three {
+	position: relative;
+	padding: 100px 30px 0;
+	z-index: 3;
+	border-bottom: 1px solid #0000001a;
+	@include media-breakpoint-down(xl) {
+		padding: 20px 15px 0;
+	}
+	@include media-breakpoint-down(md) {
+		padding-top: 0;
+	}
+	@include media-breakpoint-down(sm) {
+		padding: 0;
+	}
+	.outer-box {
+		padding: 0px 0px;
+		@include media-breakpoint-down(xl) {
+			padding: 50px 30px;
+		}
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+			padding: 30px 0;
+		}
+		@include media-breakpoint-down(sm) {
+			border-radius: 0;
+		}
+		.title-box {
+			text-align: center;
+			@include media-breakpoint-down(lg) {
+				padding-right: 0;
+				margin-right: 0;
+				max-width: 100%;
+				margin-bottom: 10px;
+			}
+			.title {
+				margin-bottom: 0;
+				color: var(--theme-color-black);
+				font-weight: var(--body-font-weight);
+				@include media-breakpoint-down(lg) {
+					br {
+						display: none;
+					}
+				}
+				@include media-breakpoint-down(sm) {
+					font-size: 18px;
+				}
+				span {
+					color: var(--theme-color1);
+					font-weight: 700;
+				}
+			}
+			.icon {
+				position: relative;
+				margin-left: 20px;
+				color: var(--theme-color2);
+				font-size: 16px;
+			}
+		}
+		.marquee-box {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			padding: 30px 0 50px;
+			.marquee {
+				position: relative;
+				@include flex-between;
+				gap: 128px;
+				animation: marquee 10s linear infinite;
+				@include media-breakpoint-down(sm) {
+					gap: 40px;
+				}
+				.client-block {
+					opacity: 20%;
+					@include transition(all 300ms ease);
+					&:hover {
+						opacity: 100%;
+					}
+				}
+			}
+			@include media-breakpoint-down(md) {
+				padding: 0;
+			}
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+  Client Section four
+====================================================================
+
+***/
+
+.client-section-four {
+	position: relative;
+	margin-top: 62px;
+	padding: 100px 30px 0;
+	z-index: 3;
+	@include media-breakpoint-down(xl) {
+		padding: 20px 15px 0;
+	}
+	@include media-breakpoint-down(md) {
+		padding-top: 0;
+	}
+	@include media-breakpoint-down(sm) {
+		padding: 0;
+	}
+	.outer-box {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: 23px 35px;
+		border-radius: 20px;
+		margin: 0 0px;
+		border: 1px solid #e6e0fa33;
+		@include media-breakpoint-down(xl) {
+			padding: 50px 30px;
+		}
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+			padding: 25px 15px;
+		}
+		@include media-breakpoint-down(sm) {
+			border-radius: 0;
+		}
+		.title-box {
+			position: relative;
+			max-width: 216px;
+			flex-shrink: 0;
+			display: flex;
+			align-items: flex-end;
+			padding-right: 40px;
+			margin-right: 25px;
+			@include media-breakpoint-down(lg) {
+				padding-right: 0;
+				margin-right: 0;
+				max-width: 100%;
+				margin-bottom: 30px;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1px;
+				height: 100%;
+				background-color: #e6e0fa33;
+				@include media-breakpoint-down(lg) {
+					display: none;
+				}
+			}
+			.title {
+				margin-bottom: 0;
+				color: var(--theme-color-white);
+				@include media-breakpoint-down(lg) {
+					br {
+						display: none;
+					}
+				}
+				@include media-breakpoint-down(sm) {
+					font-size: 18px;
+				}
+			}
+			.icon {
+				position: relative;
+				margin-left: 20px;
+				color: var(--theme-color1);
+				font-size: 18px;
+			}
+		}
+		.marquee-box {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			.marquee {
+				position: relative;
+				@include flex-between;
+				gap: 90px;
+				animation: marquee 10s linear infinite;
+				@include media-breakpoint-down(sm) {
+					gap: 40px;
+				}
+				.client-block .image {
+					margin-bottom: 0;
+					filter: brightness(0) invert(1);
+				}
+			}
+		}
+	}
+}

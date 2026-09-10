@@ -1,0 +1,411 @@
+/*** 
+
+====================================================================
+    Pricing Section
+====================================================================
+
+***/
+
+.pricing-section {
+	position: relative;
+	padding: 120px 0 90px;
+	.shape-9 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include media-breakpoint-down(xl) {
+			top: -100px;
+			left: -100px;
+		}
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		padding: 60px 0;
+	}
+}
+
+.pricing-block {
+	margin-bottom: 30px;
+	.inner-box {
+		position: relative;
+		&:hover {
+			&:after {
+				opacity: 1;
+			}
+			.content {
+				border-color: var(--theme-color3);
+				&:before {
+					transform: scaleY(1);
+					opacity: 1;
+				}
+				.time,
+				.title,
+				.list-style-three li {
+					color: var(--theme-color-white);
+				}
+				.text {
+					color: rgb(255, 255, 255, 0.6);
+				}
+			}
+			.icon {
+				transform: scaleX(-1);
+			}
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: 13px;
+			left: 10px;
+			right: -10px;
+			bottom: -10px;
+			border-radius: 20px;
+			background-color: #e6e0fa;
+			clip-path: path(
+				"M345 535.5H25C11.469 535.5 0.5 524.531 0.5 511V151.709C0.500112 144.269 3.88073 137.233 9.68848 132.583L167.963 5.87402C172.308 2.39541 177.708 0.5 183.274 0.5H345C358.531 0.5 369.5 11.469 369.5 25V511C369.5 524.319 358.871 535.157 345.633 535.492L345 535.5Z"
+			);
+
+			@include media-breakpoint-down(lg) {
+				clip-path: none;
+				border-radius: 150px 20px 20px 20px;
+			}
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 13px;
+			left: 10px;
+			right: -10px;
+			bottom: -10px;
+			border-radius: 20px;
+			opacity: 0;
+			clip-path: path(
+				"M345 535.5H25C11.469 535.5 0.5 524.531 0.5 511V151.709C0.500112 144.269 3.88073 137.233 9.68848 132.583L167.963 5.87402C172.308 2.39541 177.708 0.5 183.274 0.5H345C358.531 0.5 369.5 11.469 369.5 25V511C369.5 524.319 358.871 535.157 345.633 535.492L345 535.5Z"
+			);
+			background: var(--gradient-1);
+			@include transition(all 400ms ease);
+			@include media-breakpoint-down(lg) {
+				clip-path: none;
+				border-radius: 150px 20px 20px 20px;
+			}
+		}
+
+		.icon {
+			position: absolute;
+			top: 0;
+			left: 40px;
+			width: 110px;
+			height: 110px;
+			font-size: 54px;
+			@include flex-center;
+			color: var(--theme-color-white);
+			border-radius: 50%;
+			background: var(--gradient-1);
+			z-index: 5;
+			@include transition(all 300ms ease);
+			@include media-breakpoint-down(lg) {
+				top: 10px;
+				left: 10px;
+			}
+			@include media-breakpoint-down(sm) {
+				width: 80px;
+				height: 80px;
+				font-size: 30px;
+			}
+		}
+
+		.content {
+			position: relative;
+			overflow: hidden;
+			border-radius: 20px;
+			padding: 40px 40px;
+			z-index: 3;
+			border: 1px solid #e6e0fa;
+			background-color: var(--theme-color-white);
+			clip-path: path(
+				"M345 535.5H25C11.469 535.5 0.5 524.531 0.5 511V151.709C0.500112 144.269 3.88073 137.233 9.68848 132.583L167.963 5.87402C172.308 2.39541 177.708 0.5 183.274 0.5H345C358.531 0.5 369.5 11.469 369.5 25V511C369.5 524.319 358.871 535.157 345.633 535.492L345 535.5Z"
+			);
+			@include transition(all 400ms ease);
+			@include media-breakpoint-down(xl) {
+				padding: 30px 20px;
+			}
+			@include media-breakpoint-down(lg) {
+				clip-path: none;
+				border-radius: 150px 20px 20px 20px;
+			}
+			&:before {
+				content: "";
+				@include overlay;
+				transform: scaleY(0);
+				transform-origin: top;
+				opacity: 0;
+				border-radius: 20px;
+				background-color: var(--theme-color3);
+				@include transition(all 400ms ease);
+			}
+		}
+		.time {
+			position: relative;
+			text-align: right;
+			padding-bottom: 75px;
+			margin-bottom: 0;
+			@include transition(all 300ms ease);
+			@include media-breakpoint-down(sm) {
+				padding-bottom: 40px;
+			}
+		}
+		.title {
+			position: relative;
+			margin-bottom: 10px;
+			@include transition(all 300ms ease);
+		}
+		.text {
+			position: relative;
+			padding-bottom: 27px;
+			margin-bottom: 28px;
+			padding-right: 15px;
+			border-bottom: 1px solid #e6e0fa;
+			@include transition(all 300ms ease);
+			@include media-breakpoint-down(sm) {
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+			}
+		}
+		.list-style-three li {
+			position: relative;
+			margin-bottom: 15px;
+			@include transition(all 300ms ease);
+		}
+		.btn-box {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 13px;
+			margin-top: 40px;
+			.readmore {
+				position: relative;
+				width: 56px;
+				height: 56px;
+				border-radius: 50%;
+				font-size: 20px;
+				@include flex-center;
+				color: var(--theme-color-white);
+				background: var(--gradient-1);
+				@include transition(all 300ms ease);
+				i {
+					position: relative;
+					z-index: 3;
+				}
+				&:active {
+					transform: scale(0.9);
+				}
+				&:before {
+					content: "";
+					@include overlay;
+					transform: scale(0);
+					opacity: 0;
+					border-radius: 50%;
+					background-color: var(--theme-color2);
+					@include transition(all 300ms ease);
+				}
+				&:hover {
+					&:before {
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+    Pricing Section style-one
+====================================================================
+
+***/
+.pricing-section.style-one {
+	position: relative;
+	padding: 100px 0 0px;
+
+	@include media-breakpoint-down(lg) {
+		padding: 60px 0 0px;
+	}
+
+	.bg.bg-pattern-17 {
+		height: 605px;
+	}
+	.shape-11 {
+		position: absolute;
+		top: 0;
+		left: -130px;
+		@include media-breakpoint-down(xl) {
+			top: -100px;
+			left: -100px;
+		}
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+	.shape-32 {
+		position: absolute;
+		top: 25px;
+		right: -100px;
+		opacity: 0.1;
+		@include media-breakpoint-down(xl) {
+			top: -100px;
+			right: 0px;
+		}
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+    Pricing Section-two
+====================================================================
+
+***/
+.pricing-section-two {
+	position: relative;
+	padding: 20px 0 70px;
+	.shape-9 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include media-breakpoint-down(xl) {
+			top: -100px;
+			left: -100px;
+		}
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding: 20px 0 30px;
+	}
+}
+
+.pricing-blocks {
+	margin-bottom: 30px;
+	.inner-box {
+		position: relative;
+		border-radius: 20px;
+		padding: 45px 30px 35px;
+		z-index: 3;
+		border: 1px solid #0000001a;
+		background-color: var(--theme-color-white);
+		@include transition(all 400ms ease);
+		@include media-breakpoint-down(xl) {
+			padding: 30px 20px;
+		}
+		@include media-breakpoint-down(lg) {
+			clip-path: none;
+		}
+
+		&:hover {
+			border: 1px solid var(--theme-color1);
+			.content {
+				.icon {
+					transform: scaleX(-1);
+				}
+			}
+			.sub-title {
+				background: var(--gradient-1);
+				border-left: 1px solid var(--theme-color1);
+				border-bottom: 1px solid var(--theme-color1);
+				color: var(--theme-color-white);
+				&::before {
+					background: var(--theme-color-white);
+				}
+			}
+		}
+		.sub-title {
+			position: absolute;
+			font-size: 14px;
+			top: -1px;
+			right: -1px;
+			margin: 0;
+			padding-top: 15px;
+			height: 52px;
+			width: 102px;
+			background: #fff;
+			padding-left: 18px;
+			border-radius: 0 20px 0 20px;
+			border-left: 1px solid #0000001a;
+			border-bottom: 1px solid #0000001a;
+			@include transition(all 300ms ease);
+			&::before {
+				position: absolute;
+				content: "";
+				top: 20px;
+				right: 13px;
+				height: 10px;
+				width: 10px;
+				border-radius: 50%;
+				background: var(--gradient-1);
+				@include transition(all 300ms ease);
+			}
+		}
+		.content {
+			padding: 0 22px;
+			@include media-breakpoint-down(xl) {
+				padding: 0 0;
+			}
+
+			.icon {
+				font-size: 54px;
+				color: var(--theme-color1);
+				display: inline-block;
+				@include transition(all 300ms ease);
+				@include media-breakpoint-down(lg) {
+					top: 10px;
+					left: 10px;
+				}
+				@include media-breakpoint-down(sm) {
+					width: 80px;
+					height: 80px;
+					font-size: 30px;
+				}
+			}
+
+			.title {
+				position: relative;
+				font-size: 26px;
+				margin: 5px 0 3px;
+				@include transition(all 300ms ease);
+			}
+			.text {
+				position: relative;
+				padding-bottom: 22px;
+				margin-bottom: 28px;
+				border-bottom: 1px solid #e6e0fa;
+				@include transition(all 300ms ease);
+				@include media-breakpoint-down(sm) {
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+				}
+			}
+
+			.btn-box {
+				position: relative;
+				display: flex;
+				align-items: center;
+				gap: 13px;
+				margin-top: 40px;
+			}
+		}
+		.list-style-six li {
+			position: relative;
+			margin-bottom: 25px;
+			@include transition(all 300ms ease);
+		}
+	}
+}

@@ -1,0 +1,723 @@
+/*** 
+
+====================================================================
+  Funfact Section
+====================================================================
+
+***/
+
+.funfact-section {
+	position: relative;
+	padding: 0 0 120px;
+	margin: 0 50px;
+	@include for-xxl {
+		margin: 0;
+	}
+	.bg-pattern-3 {
+		border-radius: 200px 200px 20px 20px;
+		height: 1212px;
+		@include for-xxl {
+			border-radius: 0;
+		}
+		@include media-breakpoint-down(lg) {
+			height: 150%;
+		}
+		@include media-breakpoint-down(md) {
+			height: 130%;
+		}
+	}
+	.outer-box {
+		position: relative;
+		margin: 0 82px;
+		padding: 100px 0 50px;
+		margin-top: -4px;
+		@include media-breakpoint-down(md) {
+			padding: 60px 0;
+		}
+
+		@include for-xxl {
+			margin: 0;
+		}
+	}
+	.title-box {
+		position: relative;
+		padding: 45px 110px 0 35px;
+		@include flex-between;
+		@include media-breakpoint-down(xl) {
+			flex-direction: column;
+			padding: 30px 0;
+			text-align: center;
+		}
+		@include media-breakpoint-down(md) {
+			padding: 0;
+		}
+		.title {
+			position: relative;
+			color: var(--theme-color-white);
+			line-height: 56px;
+			margin-bottom: 0;
+			@include media-breakpoint-down(xl) {
+				br {
+					display: none;
+				}
+			}
+			@include media-breakpoint-down(md) {
+				font-size: 32px;
+				line-height: 42px;
+			}
+		}
+		.title-two {
+			font-size: 36px;
+			position: relative;
+			color: var(--theme-color-white);
+			line-height: 56px;
+			margin-bottom: 0;
+			@include media-breakpoint-down(xl) {
+				br {
+					display: none;
+				}
+			}
+			@include media-breakpoint-down(md) {
+				font-size: 30px;
+				line-height: 40px;
+			}
+		}
+		.exp-box {
+			position: relative;
+			.circular-text {
+				position: relative;
+				fill: currentColor;
+				height: auto;
+				transform-origin: center;
+				width: 170px;
+				height: 170px;
+				animation: fa-spin 30s infinite linear;
+				text {
+					position: relative;
+					font-size: 8px;
+					letter-spacing: 0.4px;
+					font-family: var(--heading-font-family);
+					color: var(--theme-color-white);
+					text-transform: uppercase;
+				}
+			}
+			.icon-box {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include flex-center;
+				width: 77px;
+				height: 77px;
+				border-radius: 50%;
+				background-color: var(--theme-color-white);
+				transform: translate(-50%, -50%);
+				.icon {
+					font-size: 34px;
+					line-height: 1em;
+					color: var(--theme-color1);
+				}
+			}
+		}
+	}
+}
+
+.counter-block {
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 30px;
+	}
+	.inner-box {
+		position: relative;
+		margin-top: 50px;
+		padding: 40px 30px 28px 40px;
+		border-radius: 0 80px 25px 25px;
+		border-top: 4px solid var(--theme-color2);
+		background-color: var(--theme-color-white);
+		&:hover {
+			.icon-box {
+				transform: scaleX(-1);
+				&:before {
+					border-top: 10px solid var(--theme-color2);
+				}
+				.icon {
+					background-color: var(--theme-color2);
+				}
+			}
+		}
+		.icon-box {
+			position: absolute;
+			top: -55px;
+			left: 0;
+			@include transition(all 300ms ease);
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-top: 10px solid var(--theme-color3);
+				transform: translateX(-50%);
+				@include transition(all 300ms ease);
+			}
+			.icon {
+				position: relative;
+				width: 88px;
+				height: 93px;
+				font-size: 40px;
+				@include flex-center;
+				color: var(--theme-color-white);
+				border-radius: 100px 100px 0 0;
+				background-color: var(--theme-color3);
+				@include transition(all 300ms ease);
+			}
+		}
+		.count-box {
+			position: relative;
+			font-size: 36px;
+			font-weight: 700;
+			line-height: 50px;
+			color: var(--theme-color3);
+			margin-top: 20px;
+		}
+		.text {
+			position: relative;
+			margin-bottom: 0;
+			line-height: 20px;
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+  Funfact Section-two
+====================================================================
+
+***/
+
+.funfact-section {
+	position: relative;
+	padding: 0 0 120px;
+	margin: 0 50px;
+	@include for-xxl {
+		margin: 0;
+	}
+	.bg-pattern-14 {
+		border-radius: 20px 20px 20px 20px;
+		height: 1530px;
+		margin-top: 130px;
+
+		@include media-breakpoint-down(xxxl) {
+			height: 1640px;
+		}
+
+		@include media-breakpoint-down(xxl) {
+			height: 1460px;
+		}
+
+		@include media-breakpoint-down(xl) {
+			height: 366%;
+		}
+
+		@include media-breakpoint-down(lg) {
+			height: 276%;
+		}
+
+		@include media-breakpoint-down(sm) {
+			height: 213%;
+		}
+		@media screen and (max-width: 400px) {
+			height: 208%;
+		}
+	}
+}
+.style-fun {
+	margin: 0 0px 0 20px;
+	.outer-box {
+		position: relative;
+		margin: 0 82px;
+		padding: 100px 0 50px;
+		margin-top: -4px;
+		@include for-xxl {
+			margin: 0;
+		}
+		.bg-shape {
+			position: absolute;
+			top: 0;
+			left: 32px;
+			width: 100%;
+			min-height: 572px;
+			clip-path: path(
+				"M0 200C0 89.5431 89.5431 0 200 0L1455 0C1565.46 0 1655 89.5431 1655 200V448.421C1655 462.228 1643.81 473.421 1630 473.421H1516.79C1468.39 473.421 1429.16 512.652 1429.16 561.047C1429.16 567.096 1424.26 572 1418.21 572H935.247C609.667 572 502.796 572 236.834 572C230.785 572 225.764 567.096 225.764 561.047C225.764 512.652 186.532 473.421 138.138 473.421H25C11.1929 473.421 0 462.228 0 448.421V200Z"
+			);
+			@include for-xxl {
+				clip-path: none;
+				left: 0px;
+			}
+			@include media-breakpoint-down(xl) {
+				min-height: auto;
+				bottom: 0;
+			}
+			.bg {
+				&:before {
+					content: "";
+					@include overlay;
+					opacity: 0.9;
+					background: var(--gradient-1);
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin: 0;
+
+		br {
+			display: none;
+		}
+
+		.outer-box {
+			padding: 80px 0 30px;
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+  Funfact Section-three
+====================================================================
+
+***/
+
+.funfact-section-three {
+	position: relative;
+	padding: 0 0 120px;
+	margin: 0 20px;
+	.outer-box {
+		margin: 0 82px;
+		padding: 100px 0 50px;
+		margin-top: -4px;
+
+		@include for-xxl {
+			margin: 0;
+		}
+		.bg-shape {
+			position: absolute;
+			top: -90px;
+			left: 100px;
+			width: 100%;
+			min-height: 572px;
+			clip-path: path(
+				"M0 200C0 89.5431 89.5431 0 200 0L1455 0C1565.46 0 1655 89.5431 1655 200V448.421C1655 462.228 1643.81 473.421 1630 473.421H1516.79C1468.39 473.421 1429.16 512.652 1429.16 561.047C1429.16 567.096 1424.26 572 1418.21 572H935.247C609.667 572 502.796 572 236.834 572C230.785 572 225.764 567.096 225.764 561.047C225.764 512.652 186.532 473.421 138.138 473.421H25C11.1929 473.421 0 462.228 0 448.421V200Z"
+			);
+			@include for-xxl {
+				clip-path: none;
+				left: 0px;
+			}
+			@include media-breakpoint-down(xxl) {
+				left: 0px;
+			}
+			@include media-breakpoint-down(xl) {
+				min-height: auto;
+				bottom: 0;
+			}
+			.bg {
+				&:before {
+					content: "";
+					@include overlay;
+					opacity: 0.7;
+					background: var(--theme-color-black);
+				}
+			}
+		}
+	}
+	.bg-pattern-16 {
+		border-radius: 20px 20px 20px 20px;
+		height: 1697px;
+		@include media-breakpoint-down(lg) {
+			height: 1600px;
+		}
+		@include media-breakpoint-down(sm) {
+			height: 1470px;
+		}
+	}
+	@include for-xxl {
+		margin: 0;
+	}
+	.bg-pattern-14 {
+		border-radius: 20px 20px 20px 20px;
+		height: 1634px;
+		margin-top: 130px;
+		@include for-xxl {
+			border-radius: 0;
+		}
+		@include media-breakpoint-down(lg) {
+			height: 150%;
+		}
+		@include media-breakpoint-down(md) {
+			height: 130%;
+		}
+	}
+	.video-box {
+		text-align: center;
+		padding-top: 50px;
+		.video-vemo-icon.venobox.vbox-item {
+			.icon {
+				font-size: 24px;
+				color: var(--theme-color1);
+				height: 100px;
+				width: 100px;
+				line-height: 100px;
+				text-align: center;
+				border-radius: 50%;
+				background: #ffffffd4;
+				backdrop-filter: blur(40px);
+				animation: ripple-blue 1s linear infinite;
+			}
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+  Funfact Section-four
+====================================================================
+
+***/
+
+.funfact-section-four {
+	position: relative;
+	padding: 0 0 120px;
+	margin: 0 20px;
+	@include for-xxl {
+		margin: 0;
+	}
+	.bg-pattern-3 {
+		border-radius: 200px 100px 20px 20px;
+		height: 1212px;
+		@include for-xxl {
+			border-radius: 0;
+		}
+		@include media-breakpoint-down(lg) {
+			height: 150%;
+		}
+		@include media-breakpoint-down(md) {
+			height: 130%;
+		}
+	}
+	.outer-box {
+		position: relative;
+		margin: 0 0px;
+		padding: 190px 0 80px;
+		margin-top: -4px;
+		@include media-breakpoint-down(lg) {
+			padding: 140px 0 50px;
+		}
+		@include for-xxl {
+			margin: 0;
+		}
+		.bg-image {
+			overflow: hidden;
+			mask-repeat: no-repeat;
+			mask-position: center center;
+			mask-size: cover;
+	    mask: url(/assets/images/resource/why-img2.png);
+			overflow: hidden;
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(lg){
+				mask: none;
+			}
+			&:before {
+				content: "";
+				@include overlay;
+				background: #1b152cb2;
+				z-index: 0;
+				display: none;
+				@include media-breakpoint-down(lg){
+					display: block;
+				}
+			}
+			img {				
+				width: 100%;
+				height: 100%;
+			}
+			.image-1 {
+				@include media-breakpoint-down(lg){
+					display: none;
+				}
+			}
+			.image-2 {
+				display: none;
+				@include media-breakpoint-down(lg){
+					display: block;
+				}
+			}
+		}
+		.text {
+			position: relative;
+			color: var(--theme-color-white);
+			padding-left: 165px;
+			padding-top: 62px;
+			@include media-breakpoint-down(xxl) {
+				br {
+					display: none;
+				}
+			}
+			@include media-breakpoint-only(lg) {
+				padding-left: 0px;
+				padding-top: 40px;
+			}
+			@include media-breakpoint-down(lg) {
+				padding-left: 0px;
+				padding-top: 0px;
+				margin-bottom: 20px;
+				br {
+					display: none;
+				}
+			}
+		}
+
+		.fact-single-box {
+			.inner-box {
+				position: relative;
+				background: rgba(255, 255, 255, 0.1098039216);
+				padding: 32px 40px 10px;
+				border-radius: 20px;
+				margin-bottom: 30px;
+				@include media-breakpoint-only(lg) {
+					padding: 32px 5px 10px;
+				}
+				&:hover {
+					.icon-box {
+						transform: scaleX(-1);
+					}
+				}
+				.icon-box {
+					position: relative;
+					display: inline-block;
+					line-height: 1;
+					@include transition(all 300ms ease);
+					.icon {
+						font-size: 60px;
+						color: var(--theme-color2);
+						@include transition(all 300ms ease);
+					}
+				}
+				.title {
+					font-size: 26px;
+					color: var(--theme-color-white);
+					margin-top: 3px;
+					@include media-breakpoint-only(md) {
+						font-size: 22px;
+					}
+					@include media-breakpoint-only(sm) {
+						font-size: 22px;
+					}
+				}
+			}
+		}
+		.sec-title {
+			margin-bottom: 30px;
+		}
+	}
+	.title-box {
+		position: relative;
+		padding: 45px 134px 0 35px;
+		@include flex-between;
+		@include media-breakpoint-down(xl) {
+			flex-direction: column;
+			padding: 30px 0;
+			text-align: center;
+		}
+		.title {
+			position: relative;
+			color: var(--theme-color-white);
+			line-height: 56px;
+			text-transform: uppercase;
+			margin-bottom: 0;
+			@include media-breakpoint-down(xl) {
+				br {
+					display: none;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				font-size: 26px;
+				line-height: 1.5em;
+			}
+		}
+		.exp-box {
+			position: relative;
+			.circular-text {
+				position: relative;
+				fill: currentColor;
+				height: auto;
+				transform-origin: center;
+				width: 170px;
+				height: 170px;
+				animation: fa-spin 30s infinite linear;
+				text {
+					position: relative;
+					font-size: 8px;
+					letter-spacing: 0.4px;
+					font-family: var(--heading-font-family);
+					color: var(--theme-color-white);
+					text-transform: uppercase;
+				}
+			}
+			.icon-box {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include flex-center;
+				width: 77px;
+				height: 77px;
+				border-radius: 50%;
+				background-color: var(--theme-color-white);
+				transform: translate(-50%, -50%);
+				.icon {
+					font-size: 34px;
+					line-height: 1em;
+					color: var(--theme-color1);
+				}
+			}
+		}
+	}
+}
+
+.counter-block {
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 30px;
+	}
+	.inner-box {
+		position: relative;
+		margin-top: 50px;
+		padding: 40px 30px 28px 40px;
+		border-radius: 0 80px 25px 25px;
+		border-top: 4px solid var(--theme-color2);
+		background-color: var(--theme-color-white);
+		@include media-breakpoint-only(lg) {
+			padding: 40px 28px 28px 30px;
+		}
+		&:hover {
+			.icon-box {
+				transform: scaleX(-1);
+				&:before {
+					border-top: 10px solid var(--theme-color2);
+				}
+				.icon {
+					background-color: var(--theme-color2);
+				}
+			}
+		}
+		.icon-box {
+			position: absolute;
+			top: -55px;
+			left: 0;
+			@include transition(all 300ms ease);
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: -10px;
+				left: 50%;
+				width: 0;
+				height: 0;
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-top: 10px solid var(--theme-color3);
+				transform: translateX(-50%);
+				@include transition(all 300ms ease);
+			}
+			.icon {
+				position: relative;
+				width: 88px;
+				height: 93px;
+				font-size: 40px;
+				@include flex-center;
+				color: var(--theme-color-white);
+				border-radius: 100px 100px 0 0;
+				background-color: var(--theme-color3);
+				@include transition(all 300ms ease);
+			}
+		}
+		.count-box {
+			position: relative;
+			font-size: 36px;
+			font-weight: 700;
+			line-height: 50px;
+			color: var(--theme-color3);
+			margin-top: 20px;
+			@include media-breakpoint-only(sm) {
+				font-size: 30px;
+			}
+		}
+		.text {
+			position: relative;
+			margin-bottom: 0;
+			line-height: 20px;
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+  Funfact Section-five
+====================================================================
+
+***/
+.funfact-section-five {
+	margin-bottom: -480px;
+	@include media-breakpoint-down(xl){
+		margin: 0;
+	}
+	.outer-box {
+		position: relative;
+		padding: 0 0 640px;
+		margin-left: 361px;
+		border-radius: 25px 0 0 25px;
+		z-index: 1;
+		overflow: hidden;
+		@include media-breakpoint-down(xxl){
+			margin-left: 60px;
+		}
+		@include media-breakpoint-down(xl){
+			padding: 0 0 440px;
+			margin: 0;
+			border-radius: 0;
+		}
+		.video-box {
+			position: relative;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			@include media-breakpoint-down(xl){
+				position: absolute;
+				top: calc(50% - 50px);
+				left: calc(50% - 50px);
+			}
+
+			.video-vemo-icon.venobox.vbox-item {
+				.icon {
+					font-size: 36px;
+					height: 200px;
+					width: 200px;
+					line-height: 200px;
+					text-align: center;
+					color: var(--theme-color-white);
+					background: var(--gradient-1);
+					border-radius: 15px;
+					@include media-breakpoint-down(xl) {
+						font-size: 30px;
+						height: 100px;
+						width: 100px;
+						line-height: 100px;
+					}
+				}
+			}
+		}
+	}
+}

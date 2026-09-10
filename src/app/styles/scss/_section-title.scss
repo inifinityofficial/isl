@@ -1,0 +1,122 @@
+/*** 
+
+====================================================================
+Section Title
+====================================================================
+
+***/
+
+.sec-title {
+	position: relative;
+	margin-bottom: 50px;
+	padding-bottom: 10px;
+	@include media-breakpoint-down(md) {
+		margin-bottom: 30px;
+	}
+
+	.sub-title {
+		position: relative;
+		color: var(--sec-title-subtitle-color);
+		font-family: var(--sec-title-subtitle-font-family);
+		font-size: var(--sec-title-subtitle-font-size);
+		font-weight: var(--sec-title-subtitle-font-weight);
+		line-height: var(--sec-title-subtitle-line-height);
+		display: inline-block;
+		margin-bottom: 5px;
+		padding-left: 21px;
+		text-transform: uppercase;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 3px;
+			left: 0px;
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			background: var(--gradient-1);
+		}
+	}
+
+	h2 {
+		position: relative;
+		display: block;
+		font-size: var(--sec-title-font-size);
+		color: var(--sec-title-color);
+		font-family: var(--sec-title-font-family);
+		font-weight: var(--sec-title-font-weight);
+		margin-bottom: 0;
+		z-index: 2;
+		@include media-breakpoint-down(xxl) {
+			font-size: 40px;
+			br {
+				display: none;
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			font-size: 32px;
+			br {
+				display: none;
+			}
+		}
+	}
+	h3 {
+		position: relative;
+		display: block;
+		font-size: 36px;
+		color: var(--sec-title-color);
+		font-family: var(--sec-title-font-family);
+		font-weight: var(--sec-title-font-weight);
+		margin-bottom: 0;
+		z-index: 2;
+		@include media-breakpoint-only(xxl) {
+			br {
+				display: none;
+			}
+		}
+		@include media-breakpoint-only(xl) {
+			font-size: 32px;
+			br {
+				display: none;
+			}
+		}
+		@include media-breakpoint-only(lg) {
+			font-size: 28px;
+			br {
+				display: none;
+			}
+		}
+		@include media-breakpoint-only(sm) {
+			font-size: 25px;
+			br {
+				display: none;
+			}
+		}
+	}
+	.text {
+		position: relative;
+		margin-top: 18px;
+		line-height: 30px;
+		font-weight: 500;
+		@include media-breakpoint-down(xl) {
+			br {
+				display: none;
+			}
+		}
+	}
+	.ab-three {
+		margin-top: 52px;
+		br {
+			display: none;
+		}
+	}
+
+	&.light {
+		.text,
+		h3,
+		h2,
+		h1 {
+			color: var(--theme-color-white);
+		}
+	}
+}

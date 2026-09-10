@@ -1,0 +1,90 @@
+/* Infinity Software Labs | Digital Agency HTML Template
+
+Template Name: Infinity Software Labs
+Version: 1.0.0
+License: copyright commercial
+/************ TABLE OF CONTENTS ***************
+1.  Fonts
+2.  Reset
+3.  Global Settings
+4.  Main Header / Two
+5.  Sticky Header
+6.  Mobile Menu
+7.  Section Title
+8.  Banner Section / Two
+9.  About Section / Two
+10. Client Section / Two
+11. Project Section / Two
+12. Service Section / Two
+13. Funfact Section
+14. Benefit Section
+15. Contact Section / Two
+16. Pricing Section
+17. Team Section
+18. Msp Section
+19. Faq Section
+20. Call To Action / Two
+21. News Section / Two
+22. Fun Fact Section
+23. Marquee Section / Two
+24. Testimonial Section / Two
+25. Main Footer
+**********************************************/
+
+@import "scss-bootstrap/functions";
+@import "scss-bootstrap/variables";
+@import "scss-bootstrap/mixins";
+@import "common/mixing.scss";
+@import "common/root.scss";
+@import "common/loader.scss";
+
+// @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import url("animate.css");
+@import url("swiper.min.css");
+@import url("jquery.fancybox.min.css");
+@import url("linear.css");
+@import url("fontawesome.css");
+@import url("flaticon.css");
+@import url("tm-bs-mp.css");
+@import url("tm-utility-classes.css");
+
+// import SCSS components one by one
+@import "reset.scss";
+@import "mobile-menu.scss";
+@import "mega-menu.scss";
+@import "accordion.scss";
+@import "button.scss";
+@import "animation.scss";
+@import "header.scss";
+@import "banner.scss";
+@import "main-slider.scss";
+@import "about.scss";
+@import "client.scss";
+@import "project.scss";
+@import "service.scss";
+@import "funfact.scss";
+@import "benefit.scss";
+@import "contact.scss";
+@import "pricing.scss";
+@import "team.scss";
+@import "map.scss";
+@import "faq.scss";
+@import "call-to-action.scss";
+@import "news.scss";
+@import "marquee.scss";
+@import "testimonial.scss";
+@import "footer.scss";
+@import "search-popup.scss";
+@import "section-title.scss";
+@import "choose.scss";
+@import "haztab.scss";
+@import "counter.scss";
+@import "progress-bar.scss";
+@import "breadcume.scss";
+@import "service-details.scss";
+@import "team-details.scss";
+@import "project-details.scss";
+@import "blog-details.scss";
+
+// @import "style-dark.scss";

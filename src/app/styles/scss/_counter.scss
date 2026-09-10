@@ -1,0 +1,87 @@
+/*** 
+
+====================================================================
+    counter Section
+====================================================================
+
+***/
+
+.counter-section{
+   position: relative;
+   padding: 0 0 0;
+    margin: 0 160px -80px;
+   z-index: 1;
+    @include media-breakpoint-down(xxl){
+        margin: 0 20px -80px;
+    }
+    .outer-box{
+        margin: 0 150px;
+        border-radius: 25px;
+
+        @include for-xxl{
+        margin: 0;
+        }
+        .bg-shape{
+            .bg.bg-image{
+                border-radius: 25px;
+            }
+        }
+        .counter-blocks{
+            position: relative;
+           .inner-box{
+            position: relative;
+             display: flex;
+             align-items: center;
+             gap: 15px;
+             margin-bottom: 30px;
+            &::before{
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 25px;
+                height: 45px;
+                width: 1px;
+                background-color: #ffffff4d;
+            }
+             &:hover{
+                .icon-box{
+                   transform: scaleX(-1);
+                }
+                
+             }
+             .icon-box{
+                transition: 0.5s;
+                .icon{
+                    font-size: 43px;
+                    color: var(--theme-color-white);
+                    transition: 0.5s;
+                }
+             }
+             .content-box{
+                .count-box.counted{
+                    font-size: 36px;
+                    color: var(--theme-color-white);
+                    font-weight: var(--h3-font-weight);
+                    line-height: 1;
+                    @include media-breakpoint-only(sm){
+                        font-size: 32px;
+                    }
+                }
+                .text{
+                    color: var(--theme-color-white);
+                    margin-top: 6px;
+                }
+             }
+           }
+           .inner-box.style-one{
+            &::before{
+                display: none;
+            }
+           }
+        } 
+        
+        .fact-counter {
+          padding: 56px 0 14px;
+        }
+    }
+}

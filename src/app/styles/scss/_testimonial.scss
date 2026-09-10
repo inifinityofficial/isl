@@ -1,0 +1,653 @@
+/*** 
+
+====================================================================
+    Testimonial Section
+====================================================================
+
+***/
+
+.testimonial-section {
+	position: relative;
+	padding: 120px 0 0;
+	@include media-breakpoint-down(xl) {
+		padding-bottom: 120px;
+	}
+	@include media-breakpoint-down(md) {
+		padding: 60px 0;
+	}
+	.shape-8 {
+		position: absolute;
+		top: -250px;
+		left: -100px;
+		@include media-breakpoint-down(xl) {
+			left: auto;
+			right: -100px;
+		}
+	}
+	.sec-title {
+		@include media-breakpoint-down(xl) {
+			text-align: center;
+		}
+	}
+
+	.testi-swiper {
+		padding-top: 30px;
+		border-top: 1px solid #e6e0fa;
+	}
+
+	.swiper-navs-box {
+		position: relative;
+		@include flex-between;
+		@include media-breakpoint-down(xl) {
+			flex-direction: column;
+			gap: 50px;
+		}
+		@include media-breakpoint-down(lg) {
+			gap: 20px;
+		}
+		.image-box {
+			position: relative;
+			display: flex;
+			gap: 20px;
+			@include media-breakpoint-down(xl) {
+				justify-content: center;
+			}
+			.author-image {
+				position: relative;
+				cursor: pointer;
+				&.active {
+					.shape-7 {
+						opacity: 1;
+					}
+				}
+				.shape-6 {
+					position: absolute;
+					top: 0;
+					left: 0;
+					pointer-events: none;
+				}
+				.shape-7 {
+					position: absolute;
+					top: 0;
+					left: 0;
+					opacity: 0;
+					pointer-events: none;
+					@include transition(all 300ms ease);
+				}
+			}
+		}
+		.nav-box {
+			position: relative;
+			width: 128px;
+			height: 56px;
+			display: flex;
+			gap: 16px;
+			margin-right: 20px;
+			@include media-breakpoint-down(xl) {
+				margin-right: 0;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				top: 33px;
+				right: 100%;
+				width: 270px;
+				height: 2px;
+				background-color: rgba(255, 67, 46, 0.2);
+				opacity: 0.5;
+				margin-right: 60px;
+				@include media-breakpoint-down(xl) {
+					display: none;
+				}
+			}
+			.swiper-button-prev {
+				left: -10px;
+				@include media-breakpoint-down(xl) {
+					left: 0;
+				}
+			}
+			.swiper-button-next {
+				@include media-breakpoint-down(xl) {
+					right: 0;
+				}
+			}
+			.swiper-button-prev,
+			.swiper-button-next {
+				width: 56px;
+				height: 56px;
+				font-size: 20px;
+				border-radius: 50%;
+				@include flex-center;
+				color: var(--theme-color3);
+				background-color: #e6e0fa;
+				@include transition(all 300ms ease);
+				&:after {
+					display: none;
+				}
+				&:hover {
+					color: var(--theme-color-white);
+					background-color: var(--theme-color1);
+				}
+			}
+		}
+	}
+
+	.image-column {
+		@include media-breakpoint-down(xl) {
+			display: none;
+		}
+		.inner-column {
+			position: relative;
+			margin-right: -200px;
+			.image {
+				position: relative;
+				width: 100%;
+				margin-bottom: 0;
+				margin-left: 40px;
+				z-index: 3;
+			}
+			.icon-10 {
+				position: absolute;
+				top: -50px;
+				right: 60px;
+			}
+			.icon-11 {
+				position: absolute;
+				bottom: 210px;
+				left: -110px;
+			}
+			.icon-12 {
+				position: absolute;
+				top: 70px;
+				left: -50px;
+			}
+			.icon-13 {
+				position: absolute;
+				bottom: 110px;
+				right: 70px;
+			}
+		}
+	}
+}
+
+.testimonial-block {
+	.inner-box {
+		position: relative;
+		padding-right: 10px;
+		@include media-breakpoint-down(xl) {
+			text-align: center;
+		}
+		.icon-quote {
+			position: relative;
+			margin-bottom: 15px;
+			@include media-breakpoint-down(xl) {
+				margin: 0 auto 15px;
+			}
+		}
+		.text {
+			position: relative;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 35px;
+			margin-bottom: 20px;
+			text-transform: capitalize;
+			@include media-breakpoint-only(sm) {
+				font-size: 18px;
+				line-height: 32px;
+			}
+		}
+		.author-box {
+			.name {
+				position: relative;
+				font-weight: 800;
+				margin-bottom: 0;
+			}
+			.designation {
+				position: relative;
+				font-size: 14px;
+				font-weight: 800;
+				margin-bottom: 28px;
+			}
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+    Testimonial Section Two
+====================================================================
+
+***/
+
+.testimonial-section-two {
+	position: relative;
+	padding: 120px 0 70px;
+	@include media-breakpoint-down(md) {
+		padding: 60px 0 30px;
+	}
+
+	.content-column {
+		margin-bottom: 50px;
+		.inner-column {
+			position: relative;
+			.sec-title {
+				margin-bottom: 30px;
+			}
+			.outer-box {
+				position: relative;
+				@include media-breakpoint-down(xl) {
+					text-align: center;
+				}
+				.nav-box {
+					position: relative;
+					width: 122px;
+					height: 66px;
+					display: flex;
+					gap: 18px;
+					border-radius: 100px;
+					background-color: var(--theme-color-white);
+					z-index: 3;
+					.swiper-button-prev,
+					.swiper-button-next {
+						width: 46px;
+						height: 46px;
+						font-size: 20px;
+						border-radius: 50%;
+						@include flex-center;
+						color: var(--theme-color1);
+						background-color: transparent;
+						border: 1px solid #e6e0fa;
+						@include transition(all 300ms ease);
+						&:before {
+							content: "";
+							@include overlay;
+							border-radius: 50%;
+							transform: scale(0.2);
+							opacity: 0;
+							background: var(--gradient-1);
+							@include transition(all 300ms ease);
+						}
+						.icon {
+							position: relative;
+							z-index: 1;
+						}
+						&:after {
+							display: none;
+						}
+						&:hover {
+							&:before {
+								transform: scale(1);
+								opacity: 1;
+							}
+							color: var(--theme-color-white);
+						}
+					}
+				}
+			}
+			.icon-26 {
+				position: absolute;
+				bottom: -60px;
+				left: 220px;
+				@include media-breakpoint-down(xl) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.blocks-column {
+		margin-bottom: 50px;
+		.inner-column {
+			position: relative;
+			overflow: hidden;
+			margin-right: -365px;
+			@include media-breakpoint-down(xl) {
+				margin-right: 0;
+			}
+			.swiper-outer {
+				position: relative;
+				max-width: 590px;
+				@include media-breakpoint-down(xl) {
+					max-width: 100%;
+				}
+			}
+			.swiper {
+				overflow: visible;
+				@include media-breakpoint-down(xl) {
+					overflow: hidden;
+				}
+			}
+		}
+	}
+}
+
+.testimonial-block-two {
+	padding-left: 20px;
+	padding-bottom: 20px;
+	@include media-breakpoint-down(sm) {
+		padding-left: 10px;
+		padding-bottom: 10px;
+	}
+	&:before {
+		content: "";
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		left: 0;
+		bottom: 0;
+		padding: 2px;
+		border-radius: 20px 20px 80px 20px;
+		background: var(--gradient-1);
+		-webkit-mask: linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+	}
+	.inner-box {
+		position: relative;
+		overflow: hidden;
+		padding: 0 30px 20px;
+		border-radius: 20px 20px 80px 20px;
+		background-color: var(--theme-color-white);
+		z-index: 3;
+		@include media-breakpoint-down(sm) {
+			padding: 0 15px 20px;
+		}
+		.shape-19 {
+			position: absolute;
+			top: 0;
+			right: 0;
+			pointer-events: none;
+		}
+		.icon-quote-2 {
+			position: absolute;
+			top: 32px;
+			right: 18px;
+		}
+		.content-box {
+			position: relative;
+			z-index: 3;
+		}
+		.author-image {
+			position: relative;
+			display: inline-block;
+			padding: 27px 10px 10px;
+			border-radius: 0 0 100px 100px;
+			background: var(--gradient-1);
+			margin-bottom: 30px;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 20px;
+			}
+			img {
+				position: relative;
+				border-radius: 50%;
+			}
+		}
+		.text {
+			position: relative;
+			font-size: 20px;
+			line-height: 34px;
+			color: var(--theme-color3);
+			margin-bottom: 30px;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 20px;
+			}
+			@include media-breakpoint-down(sm) {
+				font-size: 16px;
+				line-height: 28px;
+			}
+		}
+		.author-box {
+			position: relative;
+			padding-right: 25px;
+			@include flex-between;
+			@include media-breakpoint-down(sm) {
+				flex-direction: column;
+				padding-right: 0;
+				align-items: flex-start;
+				gap: 5px;
+			}
+			.name {
+				position: relative;
+				font-weight: 700;
+				color: var(--theme-color1);
+				margin-bottom: 0;
+			}
+			.designation {
+				position: relative;
+				font-size: 14px;
+				font-weight: 500;
+				margin-bottom: 0;
+			}
+		}
+		.rating {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			i {
+				color: var(--theme-color2);
+				font-size: 13px;
+			}
+		}
+	}
+}
+
+/*** 
+
+====================================================================
+    Testimonial Section Three
+====================================================================
+
+***/
+.benefit-section {
+	.outer-box {
+		position: relative;
+		@include media-breakpoint-down(xl) {
+			text-align: center;
+		}
+		.nav-box {
+			position: relative;
+			width: 122px;
+			height: 66px;
+			display: flex;
+			gap: 18px;
+			margin-top: 28px;
+			border-radius: 100px;
+			background-color: var(--theme-color-white);
+			z-index: 3;
+			.swiper-button-prev,
+			.swiper-button-next {
+				width: 46px;
+				height: 46px;
+				font-size: 20px;
+				border-radius: 50%;
+				@include flex-center;
+				color: var(--theme-color1);
+				background-color: transparent;
+				border: 1px solid #e6e0fa;
+				@include transition(all 300ms ease);
+				&:before {
+					content: "";
+					@include overlay;
+					border-radius: 50%;
+					transform: scale(0.2);
+					opacity: 0;
+					background: var(--gradient-1);
+					@include transition(all 300ms ease);
+				}
+				.icon {
+					position: relative;
+					z-index: 1;
+				}
+				&:after {
+					display: none;
+				}
+				&:hover {
+					&:before {
+						transform: scale(1);
+						opacity: 1;
+					}
+					color: var(--theme-color-white);
+				}
+			}
+		}
+	}
+	.icon-26 {
+		position: absolute;
+		bottom: -60px;
+		left: 220px;
+		@include media-breakpoint-down(xl) {
+			display: none;
+		}
+	}
+
+	.blocks-column {
+		margin-bottom: 50px;
+		.inner-column {
+			position: relative;
+			overflow: hidden;
+			margin-right: -365px;
+			margin-left: -125px;
+			padding-top: 110px;
+			@include media-breakpoint-down(xl) {
+				margin-right: 0;
+				margin-left: 0px;
+				padding-top: 60px;
+				padding-bottom: 30px;
+			}
+			.swiper-outer {
+				position: relative;
+				max-width: 590px;
+				@include media-breakpoint-down(xl) {
+					max-width: 100%;
+				}
+			}
+			.swiper {
+				overflow: visible;
+				@include media-breakpoint-down(xl) {
+					overflow: hidden;
+				}
+			}
+		}
+	}
+}
+
+.testimonial-block-three {
+	padding-left: 20px;
+	padding-bottom: 20px;
+	@include media-breakpoint-down(sm) {
+		padding-left: 10px;
+		padding-bottom: 10px;
+	}
+
+	.inner-box {
+		position: relative;
+		padding: 0 30px 20px;
+		margin-bottom: 36px;
+		margin-right: 8px;
+		@include media-breakpoint-down(xl) {
+			padding: 0 15px 20px;
+		}
+		&::before {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			border-radius: 25px 25px 25px 25px;
+			background-color: var(--theme-color-white);
+			z-index: -1;
+			clip-path: polygon(30% 0, 100% 0, 100% 98%, 0 99%, 0 20%);
+		}
+		&::after {
+			position: absolute;
+			content: "";
+			top: 8px;
+			left: 12px;
+			height: 100%;
+			width: 100%;
+			background-color: #e6e0fa;
+			z-index: -2;
+			border-radius: 25px 25px 25px 25px;
+			clip-path: polygon(30% 0, 100% 0, 100% 98%, 0 99%, 0 20%);
+		}
+		.content-box {
+			position: relative;
+			z-index: 3;
+		}
+		.author-image {
+			position: relative;
+			display: inline-block;
+			padding: 15px 15px;
+			border-radius: 50%;
+			background: var(--gradient-1);
+			margin-bottom: 20px;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 20px;
+			}
+			img {
+				position: relative;
+				border-radius: 50%;
+			}
+		}
+		.text {
+			position: relative;
+			font-size: 20px;
+			line-height: 40px;
+			color: var(--theme-color3);
+			margin-bottom: 15px;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 20px;
+			}
+			@include media-breakpoint-down(sm) {
+				font-size: 16px;
+				line-height: 28px;
+			}
+		}
+		.author-box {
+			position: relative;
+			gap: 30px;
+			@include flex-left;
+			@include media-breakpoint-down(sm) {
+				flex-direction: column;
+				padding-right: 0;
+				align-items: flex-start;
+				gap: 5px;
+			}
+			.name {
+				position: relative;
+				font-weight: 700;
+				color: var(--theme-color1);
+				margin-bottom: 0;
+			}
+			.designation {
+				position: relative;
+				font-size: 14px;
+				font-weight: 500;
+				margin-bottom: 0;
+			}
+		}
+		.rating {
+			position: absolute;
+			top: 40px;
+			right: 30px;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			i {
+				color: var(--theme-color2);
+				font-size: 13px;
+			}
+		}
+	}
+}
+.benefit-section.style-testi {
+	height: 850px;
+
+	@include media-breakpoint-down(xl) {
+		height: 100%;
+	}
+}

@@ -1,0 +1,171 @@
+/***
+
+====================================================================
+    Marquee Section
+====================================================================
+
+***/
+
+.marquee-section {
+	position: relative;
+	padding: 50px 0;
+	z-index: 3;
+	@include media-breakpoint-down(lg) {
+		padding: 0;
+	}
+	.shape-5 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+	.marquee-container {
+		width: 100%;
+		overflow: hidden;
+		display: flex;
+		.marquee {
+			display: flex;
+			white-space: nowrap;
+			animation: marquee 50s linear infinite;
+			.text {
+				position: relative;
+				color: var(--theme-color3);
+				font-size: 60px;
+				font-weight: 700;
+				line-height: 1em;
+				padding: 0 35px;
+				text-transform: uppercase;
+				@include media-breakpoint-only(lg) {
+					font-size: 45px;
+				}
+				@include media-breakpoint-down(md) {
+					font-size: 36px;
+				}
+				&.two {
+					color: var(--theme-color2);
+				}
+			}
+			.icon-9 {
+				@include media-breakpoint-down(xl) {
+					width: 40px;
+					height: 40px;
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+				@include media-breakpoint-down(md) {
+					width: 30px;
+					height: 30px;
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+			}
+		}
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+/***
+
+====================================================================
+    Marquee Section Two
+====================================================================
+
+***/
+
+.marquee-section-two {
+	position: relative;
+	padding: 40px 0;
+	background: var(--gradient-1);
+	@include media-breakpoint-down(sm) {
+		padding: 30px 0;
+	}
+	.marquee-container {
+		width: 100%;
+		overflow: hidden;
+		display: flex;
+		.marquee {
+			display: flex;
+			white-space: nowrap;
+			animation: marquee 50s linear infinite;
+			.text {
+				position: relative;
+				font-size: 40px;
+				font-weight: 800;
+				line-height: 1.3em;
+				padding: 0 35px;
+				color: var(--theme-color-white);
+				text-transform: capitalize;
+				@include media-breakpoint-down(lg) {
+					font-size: 30px;
+					line-height: 1.4em;
+				}
+				@include media-breakpoint-down(sm) {
+					font-size: 24px;
+					padding: 0 15px;
+				}
+			}
+		}
+	}
+}
+
+/***
+
+====================================================================
+    Marquee Section style-one
+====================================================================
+
+***/
+.marquee-section.style-one {
+	position: relative;
+	padding: 160px 0 0;
+	z-index: 3;
+
+	@include media-breakpoint-down(lg) {
+		padding: 60px 0 0;
+	}
+
+	.shape-5 {
+		position: absolute;
+		top: 90px;
+		left: 0;
+	}
+	.icon-9 {
+		animation: fa-spin 12s infinite linear;
+	}
+}
+
+/***
+
+====================================================================
+    Marquee Section style-two
+====================================================================
+
+***/
+.marquee-section.style-two {
+	position: relative;
+	padding: 84px 0 130px;
+	z-index: 3;
+
+	.shape-5 {
+		position: absolute;
+		top: 5px;
+		left: 0;
+	}
+	.icon-9 {
+		animation: fa-spin 12s infinite linear;
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding: 60px 0;
+	}
+}
