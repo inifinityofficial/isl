@@ -40,7 +40,7 @@ const FunFactSection: React.FC = (): JSX.Element => {
 
       <div className="outer-box">
         <div
-          className="bg bg-image"
+          className="bg bg-image  custom-filter"
           style={{ backgroundImage: "url(/assets/images/background/3.png)" }}
         ></div>
 

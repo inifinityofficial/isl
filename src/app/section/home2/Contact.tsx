@@ -1,6 +1,33 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { submitWeb3Form } from "../../../utils/web3form";
+
+type Status = { type: "success" | "error" | "info"; text: string } | null;
 
 const ContactSectionTwo: React.FC = (): JSX.Element => {
+  const [status, setStatus] = useState<Status>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus({ type: "info", text: "Please wait..." });
+    setSubmitting(true);
+    try {
+      const message = await submitWeb3Form(form);
+      setStatus({ type: "success", text: message });
+      form.reset();
+    } catch (err) {
+      setStatus({
+        type: "error",
+        text: err instanceof Error ? err.message : "Something went wrong!",
+      });
+    } finally {
+      setSubmitting(false);
+      setTimeout(() => setStatus(null), 5000);
+    }
+  };
+
   return (
           <section className="contact-section-two">
             <div className="bg bg-pattern-12"></div>
@@ -14,8 +41,11 @@ const ContactSectionTwo: React.FC = (): JSX.Element => {
                                 <h2 className="text-reveal-anim">Get in Touch</h2>
                             </div>
                             <div className="contact-form">
-                                <form method="post" action="/">
+                                <form method="post" onSubmit={handleSubmit}>
                                     <div className="row">
+
+                                        <input type="hidden" name="access_key" value="79cd5a48-314a-46bc-9542-722ec0bdbb9e"/>
+
                                         <div className="form-group col-lg-6 col-md-6 col-sm-12">
                                             <input type="text" name="name" placeholder="Your Name" required/>
                                         </div>
@@ -33,14 +63,22 @@ const ContactSectionTwo: React.FC = (): JSX.Element => {
                                         </div>
                                         <div className="form-group col-lg-12 col-md-12 col-sm-12">
                                             <div className="btn-box">
-                                                <button className="theme-btn-main">
+                                                <button type="submit" className="theme-btn-main" disabled={submitting}>
                                                     <span className="theme-btn-arrow-left"><i className="fa fa-arrow-right"></i></span>
-                                                  <span className="theme-btn">Send a message</span>
+                                                  <span className="theme-btn">{submitting ? "Sending..." : "Send a message"}</span>
                                                   <span className="theme-btn-arrow-right"><i className="fa fa-arrow-right"></i></span>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
+                                    {status && (
+                                        <div className={`w3f-status show ${status.type}`}>
+                                            {status.type === "success" ? <i className="fa fa-check-circle"></i> : null}
+                                            {status.type === "error" ? <i className="fa fa-exclamation-circle"></i> : null}
+                                            {status.type === "info" ? <i className="fa fa-spinner fa-spin"></i> : null}
+                                            {status.text}
+                                        </div>
+                                    )}
                                 </form>
                             </div>
                         </div>

@@ -21,7 +21,7 @@ const BannerSection: React.FC = (): JSX.Element => {
         autoplay={{ delay: 5000 }}
         loop
       >
-        {[1, 2].map((slide) => (
+        {[1].map((slide) => (
           <SwiperSlide key={slide} className="banner-slide">
             <div className="outer-box">
               <div className="inner-box">

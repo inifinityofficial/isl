@@ -1,10 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { submitWeb3Form } from "../../../utils/web3form";
 
 const FooterFive = () => {
+  const [status, setStatus] = useState<{ type: "success" | "error" | "info"; text: string } | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleNewsletter = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus({ type: "info", text: "Please wait..." });
+    setSubmitting(true);
+    try {
+      const message = await submitWeb3Form(form);
+      setStatus({ type: "success", text: message });
+      form.reset();
+    } catch (err) {
+      setStatus({
+        type: "error",
+        text: err instanceof Error ? err.message : "Something went wrong!",
+      });
+    } finally {
+      setSubmitting(false);
+      setTimeout(() => setStatus(null), 5000);
+    }
+  };
+
   return (
     <footer className="main-footer footer-style-five">
       <div className="shape-15"></div>
@@ -45,8 +69,13 @@ const FooterFive = () => {
                   At vero eos et accusamus iusto odio dignissimos ducimus blanditiise
                 </div>
                 <div className="newsletter-form light-bg">
-                  <form onSubmit={(e) => e.preventDefault()}>
+                  <form onSubmit={handleNewsletter} method="post">
                     <div className="form-group">
+                      <input
+                        type="hidden"
+                        name="access_key"
+                        value="eb9d5acd-1079-42d9-b5c3-ee726a710cd3"
+                      />
                       <input
                         type="email"
                         id="Yemail"
@@ -55,10 +84,18 @@ const FooterFive = () => {
                         placeholder="Email Address"
                         required
                       />
-                      <button type="submit" className="form-btn">
+                      <button type="submit" className="form-btn" disabled={submitting}>
                         <i className="fa fa-arrow-right"></i>
                       </button>
                     </div>
+                    {status && (
+                      <div className={`w3f-status show ${status.type}`}>
+                        {status.type === "success" ? <i className="fa fa-check-circle"></i> : null}
+                        {status.type === "error" ? <i className="fa fa-exclamation-circle"></i> : null}
+                        {status.type === "info" ? <i className="fa fa-spinner fa-spin"></i> : null}
+                        {status.text}
+                      </div>
+                    )}
                   </form>
                 </div>
               </div>

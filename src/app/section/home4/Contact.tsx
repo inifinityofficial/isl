@@ -1,9 +1,35 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { submitWeb3Form } from "../../../utils/web3form";
+
+type Status = { type: "success" | "error" | "info"; text: string } | null;
 
 const ContactSectionThree: React.FC = (): JSX.Element => {
+  const [status, setStatus] = useState<Status>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus({ type: "info", text: "Please wait..." });
+    setSubmitting(true);
+    try {
+      const message = await submitWeb3Form(form);
+      setStatus({ type: "success", text: message });
+      form.reset();
+    } catch (err) {
+      setStatus({
+        type: "error",
+        text: err instanceof Error ? err.message : "Something went wrong!",
+      });
+    } finally {
+      setSubmitting(false);
+      setTimeout(() => setStatus(null), 5000);
+    }
+  };
+
   return (
     <section className="contact-section-three">
       <div className="outer-box">
@@ -34,10 +60,11 @@ const ContactSectionThree: React.FC = (): JSX.Element => {
                 {/* Contact Form */}
                 <div className="contact-form-two">
                   <form
-                    onSubmit={(e) => e.preventDefault()}
+                    onSubmit={handleSubmit}
                     id="contact-form"
-                    method="post" action="/">
+                    method="post">
                     <div className="row">
+                       <input type="hidden" name="access_key" value="79cd5a48-314a-46bc-9542-722ec0bdbb9e"/>
                       <div className="form-group col-lg-6 col-md-6 col-sm-12">
                         <input
                           type="text"
@@ -83,11 +110,11 @@ const ContactSectionThree: React.FC = (): JSX.Element => {
                       </div>
                       <div className="form-group col-lg-12 col-md-12 col-sm-12">
                         <div className="btn-box">
-                          <button type="submit" className="theme-btn-main">
+                          <button type="submit" className="theme-btn-main" disabled={submitting}>
                             <span className="theme-btn-arrow-left">
                               <i className="fa fa-arrow-right"></i>
                             </span>
-                            <span className="theme-btn">Send a message</span>
+                            <span className="theme-btn">{submitting ? "Sending..." : "Send a message"}</span>
                             <span className="theme-btn-arrow-right">
                               <i className="fa fa-arrow-right"></i>
                             </span>
@@ -95,6 +122,14 @@ const ContactSectionThree: React.FC = (): JSX.Element => {
                         </div>
                       </div>
                     </div>
+                    {status && (
+                      <div className={`w3f-status show ${status.type}`}>
+                        {status.type === "success" ? <i className="fa fa-check-circle"></i> : null}
+                        {status.type === "error" ? <i className="fa fa-exclamation-circle"></i> : null}
+                        {status.type === "info" ? <i className="fa fa-spinner fa-spin"></i> : null}
+                        {status.text}
+                      </div>
+                    )}
                   </form>
                 </div>
               </div>

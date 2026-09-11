@@ -1,8 +1,32 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { submitWeb3Form } from "../../../utils/web3form";
 
 const Footer2: React.FC = () => {
+  const [status, setStatus] = useState<{ type: "success" | "error" | "info"; text: string } | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleNewsletter = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus({ type: "info", text: "Please wait..." });
+    setSubmitting(true);
+    try {
+      const message = await submitWeb3Form(form);
+      setStatus({ type: "success", text: message });
+      form.reset();
+    } catch (err) {
+      setStatus({
+        type: "error",
+        text: err instanceof Error ? err.message : "Something went wrong!",
+      });
+    } finally {
+      setSubmitting(false);
+      setTimeout(() => setStatus(null), 5000);
+    }
+  };
+
   return (
     <footer className="main-footer footer-style-one style-two">
       <div className="bg bg-pattern-7"></div>
@@ -120,8 +144,9 @@ const Footer2: React.FC = () => {
               <div className="footer-widget newsletter-widget">
                 <h4 className="widget-title">Newsletter</h4>
                 <div className="newsletter-form">
-                  <form action="#" method="post">
+                  <form onSubmit={handleNewsletter} method="post">
                     <div className="form-group">
+                       <input type="hidden" name="access_key" value="eb9d5acd-1079-42d9-b5c3-ee726a710cd3"></input>
                       <input
                         type="email"
                         id="Yemail"
@@ -129,7 +154,7 @@ const Footer2: React.FC = () => {
                         placeholder="Email Address"
                         required
                       />
-                      <button type="submit" className="form-btn">
+                      <button type="submit" className="form-btn" disabled={submitting}>
                         <i className="fa fa-paper-plane"></i>
                       </button>
                     </div>
@@ -144,6 +169,14 @@ const Footer2: React.FC = () => {
                         I agree to all your terms and policies
                       </label>
                     </div>
+                    {status && (
+                      <div className={`w3f-status show ${status.type}`}>
+                        {status.type === "success" ? <i className="fa fa-check-circle"></i> : null}
+                        {status.type === "error" ? <i className="fa fa-exclamation-circle"></i> : null}
+                        {status.type === "info" ? <i className="fa fa-spinner fa-spin"></i> : null}
+                        {status.text}
+                      </div>
+                    )}
                   </form>
                 </div>
               </div>

@@ -35,7 +35,7 @@ const CounterSection: React.FC = (): JSX.Element => {
       <div className="outer-box">
         <div className="bg-shape">
           <div
-            className="bg bg-image"
+            className="bg bg-image custom-filter"
             style={{ backgroundImage: "url(/assets/images/icons/h55.jpg)" }}
           ></div>
         </div>

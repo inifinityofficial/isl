@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import NavLinks from "../NavLinks";
 import MobileMenu from "../MobileMenu";
 
@@ -16,9 +17,20 @@ interface HeaderProps {
 
 const Header6: React.FC<HeaderProps> = ({ handleOpen, handleRemove, handleRemove2, scroll }): JSX.Element => {
     const [isSearchActive, setIsSearchActive] = useState(false);
+    const router = useRouter();
 
     const handleToggle = () => {
       setIsSearchActive(!isSearchActive);
+    };
+
+    const handleSearch = (e: React.FormEvent<HTMLFormElement>): void => {
+      e.preventDefault();
+      const query = (e.currentTarget.elements.namedItem("search-field") as HTMLInputElement | null)?.value ?? "";
+      const q = query.trim();
+      if (q) {
+        router.push(`/page-blog?q=${encodeURIComponent(q)}`);
+      }
+      setIsSearchActive(false);
     };
   return (
     <header className={`main-header header-style-six ${scroll ? "fixed-header" : ""}`}>
@@ -128,7 +140,7 @@ const Header6: React.FC<HeaderProps> = ({ handleOpen, handleRemove, handleRemove
           <span className="fa fa-times"></span>
         </button>
         <div className="search-inner">
-          <form method="post" action="#">
+          <form onSubmit={handleSearch}>
             <div className="form-group">
               <input type="search" name="search-field" placeholder="Search..." required />
               <button type="submit">

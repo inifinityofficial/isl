@@ -1,8 +1,34 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { submitWeb3Form } from "../../../utils/web3form";
+
+type Status = { type: "success" | "error" | "info"; text: string } | null;
 
 const BlogDetailsSection: React.FC = (): JSX.Element => {
+  const [status, setStatus] = useState<Status>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus({ type: "info", text: "Please wait..." });
+    setSubmitting(true);
+    try {
+      const message = await submitWeb3Form(form);
+      setStatus({ type: "success", text: message });
+      form.reset();
+    } catch (err) {
+      setStatus({
+        type: "error",
+        text: err instanceof Error ? err.message : "Something went wrong!",
+      });
+    } finally {
+      setSubmitting(false);
+      setTimeout(() => setStatus(null), 5000);
+    }
+  };
+
   return (
     <section className="blog-details-section">
         <div className="auto-container">
@@ -122,8 +148,9 @@ const BlogDetailsSection: React.FC = (): JSX.Element => {
                         <h3 className="title">Write your comment</h3>
                     </div>
                     <div className="contact-form-four">
-                        <form method="post" action="#" id="contact-form">
+                        <form method="post" onSubmit={handleSubmit} id="contact-form">
                             <div className="row">
+                                <input type="hidden" name="access_key" value="79cd5a48-314a-46bc-9542-722ec0bdbb9e"/>
                                 <div className="form-group col-lg-12 col-md-12 col-sm-12">
                                     <textarea name="message" placeholder="Write a Message" required></textarea>
                                 </div>
@@ -141,11 +168,19 @@ const BlogDetailsSection: React.FC = (): JSX.Element => {
 
                                 <div className="form-group col-lg-12 col-md-12 col-sm-12">
                                     <div className="btn-box">
-                                        <button className="theme-btn btn-style-five"><span className="btn-title">send here</span></button>
+                                        <button type="submit" className="theme-btn btn-style-five" disabled={submitting}><span className="btn-title">{submitting ? "Sending..." : "send here"}</span></button>
                                         <Link href="page-contact.html" className="readmore"></Link>
                                     </div>
                                 </div>
                             </div>
+                            {status && (
+                                <div className={`w3f-status show ${status.type}`}>
+                                    {status.type === "success" ? <i className="fa fa-check-circle"></i> : null}
+                                    {status.type === "error" ? <i className="fa fa-exclamation-circle"></i> : null}
+                                    {status.type === "info" ? <i className="fa fa-spinner fa-spin"></i> : null}
+                                    {status.text}
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>
@@ -154,7 +189,7 @@ const BlogDetailsSection: React.FC = (): JSX.Element => {
                 <div className="blog-sidebar">
                         <div className="widget widget_search">
                         <div className="search">
-                            <form action="#" method="post">
+                            <form action="/page-blog" method="get" role="search">
                                 <input type="text" name="s" placeholder="Type Here" title="Search for:" required/>
                                 <button type="submit" className="icons">Search</button>
                             </form>

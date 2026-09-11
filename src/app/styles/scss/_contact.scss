@@ -1,4 +1,4 @@
-/*** 
+/***
 
 ====================================================================
     Contact Section
@@ -224,7 +224,7 @@
 	}
 }
 
-/*** 
+/***
 
 ====================================================================
     Contact Section Two
@@ -367,7 +367,7 @@
 	}
 }
 
-/*** 
+/***
 
 ====================================================================
     Contact Section-three
@@ -599,7 +599,7 @@
 	}
 }
 
-/*** 
+/***
 
 ====================================================================
     Contact Section style-one
@@ -643,7 +643,7 @@
 	}
 }
 
-/*** 
+/***
 
 ====================================================================
     Contact Section four
@@ -772,7 +772,7 @@
 	}
 }
 
-/*** 
+/***
 
 ====================================================================
     Contact Section five
@@ -950,5 +950,79 @@
 	textarea {
 		height: 183px;
 		resize: none;
+	}
+}
+
+/***
+
+====================================================================
+    Web3Forms Inline Form Status
+====================================================================
+
+***/
+
+.w3f-status {
+	position: relative;
+	display: none;
+	width: 100%;
+	margin-top: 15px;
+	padding: 14px 18px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 22px;
+	border-radius: 10px;
+	@include transition(all 300ms ease);
+
+	&.show {
+		display: block;
+		animation: w3fFadeInDown 300ms ease;
+	}
+
+	i {
+		margin-right: 8px;
+	}
+
+	&.success {
+		color: #0f6b32;
+		background-color: #e5f8ec;
+		border: 1px solid #b5e8c8;
+	}
+
+	&.error {
+		color: #8f1d1d;
+		background-color: #fdecec;
+		border: 1px solid #f5c2c2;
+	}
+
+	&.info {
+		color: var(--theme-color3);
+		background-color: var(--theme-color2);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+	}
+}
+
+/* Newsletter widget status (compact) */
+.newsletter-widget .w3f-status,
+.about-widget .w3f-status {
+	margin-top: 10px;
+	padding: 10px 14px;
+	font-size: 13px;
+	border-radius: 8px;
+}
+
+/* Buttons disabled while submitting */
+[type="submit"][disabled] {
+	cursor: not-allowed;
+	opacity: 0.65;
+}
+
+@keyframes w3fFadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-6px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
