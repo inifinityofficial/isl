@@ -11,7 +11,7 @@ const ClientSection: React.FC = (): JSX.Element => {
         <div className="outer-box">
           <div className="title-box">
             <h5 className="title">
-              Trusted By <br /> Top Companies
+              Solutions for <br /> growing businesses
             </h5>
             <i className="icon fa fa-arrow-up-right"></i>
           </div>

@@ -9,21 +9,21 @@ import "swiper/css/navigation";
 
 const testimonials = [
   {
-    text: `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.`,
-    name: "Cameron Williamson",
-    role: "Business Owner",
+    text: `The team understood our business context quickly and delivered a website that actually supports how we sell and serve clients. Their communication and technical execution were both clear and reliable.`,
+    name: "Business Owner",
+    role: "Service Business",
     image: "testi-author-1.png",
   },
   {
-    text: `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.`,
-    name: "Anthony Malison",
-    role: "Graphic Designer",
+    text: `The process felt structured from the start. We had a clear plan, thoughtful design direction, and a final product that gave our business a far more credible digital presence.`,
+    name: "Operations Lead",
+    role: "Growing Company",
     image: "testi-author-2.jpg",
   },
   {
-    text: `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.`,
-    name: "Charles Charloth",
-    role: "Brand Owner",
+    text: `Infinity Software Labs combined technical depth with practical business thinking. The result was a cleaner user journey, stronger content structure, and a more professional online experience.`,
+    name: "Marketing Manager",
+    role: "Digital Brand",
     image: "testi-author-3.jpg",
   },
 ];
@@ -38,7 +38,7 @@ const TestimonialSection: React.FC = (): JSX.Element => {
       <div className="shape-8"></div>
       <div className="auto-container">
         <div className="row">
-          <div className="content-column col-xl-8 col-lg-12 col-md-12 col-sm-12">
+          <div className="content-column col-xl-8 col-lg-12 col-md-12 col-sm-12 mb-50">
             <div className="inner-column">
               <div className="sec-title">
                 <div className="sub-title">Testimonials</div>

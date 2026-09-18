@@ -4,40 +4,40 @@ import Link from "next/link";
 const pricingPlans = [
   {
     icon: "flaticon-technology",
-    price: "29/Month",
-    title: "Basic Plan",
+    price: "Strategy",
+    title: "Discovery & Planning",
     description:
-      "There are many variation of passages of Lorem Ipsum available form.",
+      "We define the solution, technical direction and user goals before the build begins.",
     features: [
-      "Fully Responsive",
-      "Creativity in Designs",
-      "SEO Optimized Content",
+      "Business review",
+      "Requirements mapping",
+      "Scope clarity",
     ],
     delay: "0ms",
   },
   {
     icon: "flaticon-digital-services",
-    price: "39/Month",
-    title: "Standard Plan",
+    price: "Design",
+    title: "UX & Interface Design",
     description:
-      "There are many variation of passages of Lorem Ipsum available form.",
+      "We shape the visual and interaction system so the experience feels clear and persuasive.",
     features: [
-      "Fully Responsive",
-      "Creativity in Designs",
-      "SEO Optimized Content",
+      "User flows",
+      "Responsive layouts",
+      "Content structure",
     ],
     delay: "300ms",
   },
   {
     icon: "flaticon-laptop",
-    price: "49/Month",
-    title: "Premium Plan",
+    price: "Build",
+    title: "Development & Launch",
     description:
-      "There are many variation of passages of Lorem Ipsum available form.",
+      "We implement the build, integrate systems, test performance and support a clean launch.",
     features: [
-      "Fully Responsive",
-      "Creativity in Designs",
-      "SEO Optimized Content",
+      "Custom development",
+      "Performance checks",
+      "Launch support",
     ],
     delay: "600ms",
   },
@@ -49,9 +49,9 @@ const PricingSection: React.FC = (): JSX.Element => {
       <div className="shape-9"></div>
       <div className="auto-container">
         <div className="sec-title text-center">
-          <div className="sub-title">our plans</div>
+          <div className="sub-title">How we work</div>
           <h2 className="text-reveal-anim">
-            Make Brand Pricing <br /> Plans Identities
+            A straightforward process from strategy to launch
           </h2>
         </div>
 

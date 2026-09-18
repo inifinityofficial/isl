@@ -5,18 +5,18 @@ import Link from "next/link";
 const benefits = [
   {
     icon: "flaticon-graphic-design",
-    title: "Quality Services",
-    text: "Parturient montes nascetur ridiculus mus is maecenas venenatis, neque in feugiat elementum.",
+    title: "Business-focused development",
+    text: "Every project is shaped around your workflow, goals, customers and long-term roadmap rather than a one-size-fits-all template.",
   },
   {
     icon: "flaticon-teaching",
-    title: "Professional Experts",
-    text: "Parturient montes nascetur ridiculus mus is maecenas venenatis, neque in feugiat elementum.",
+    title: "Custom digital systems",
+    text: "We build solutions that fit your operations, not the other way around, whether that means a sales website, internal portal or AI-assisted workflow.",
   },
   {
     icon: "flaticon-laptop",
-    title: "99% Success Rates",
-    text: "Parturient montes nascetur ridiculus mus is maecenas venenatis, neque in feugiat elementum.",
+    title: "Performance and support",
+    text: "Our work balances usability, stability and speed, with ongoing support to help your solution keep performing after launch.",
   },
 ];
 
@@ -33,13 +33,12 @@ const BenefitSection: React.FC = (): JSX.Element => {
           >
             <div className="inner-column">
               <div className="sec-title">
-                <div className="sub-title">Our benefits</div>
+                <div className="sub-title">Why choose us</div>
                 <h2 className="text-reveal-anim">
-                  Why You Should <br /> Choose Our Agency
+                  A practical technology partner for <br /> growth-focused businesses
                 </h2>
                 <h6 className="title">
-                  The primary goal of business market is to help organizations
-                  improve their performance.
+                  We build digital solutions that are clear, reliable and aligned with how your business actually operates.
                 </h6>
               </div>
 
@@ -62,7 +61,7 @@ const BenefitSection: React.FC = (): JSX.Element => {
                   <span className="theme-btn-arrow-left">
                     <i className="fa fa-arrow-right"></i>
                   </span>
-                  <span className="theme-btn">Discover More</span>
+                  <span className="theme-btn">Talk to Our Team</span>
                   <span className="theme-btn-arrow-right">
                     <i className="fa fa-arrow-right"></i>
                   </span>
@@ -90,7 +89,7 @@ const BenefitSection: React.FC = (): JSX.Element => {
                 <i className="icon flaticon-recommend"></i>
                 <div className="cat">GROW BUSINESS</div>
                 <h4 className="title">
-                  We Help Your Business <br /> To Become More <br /> Stronger
+                  Better systems. <br /> Better customer <br /> experience.
                 </h4>
               </div>
             </div>

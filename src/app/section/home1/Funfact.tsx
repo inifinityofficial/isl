@@ -5,30 +5,30 @@ import CounterUp from "../../components/elements/CounterUp";
 const counters = [
   {
     icon: "flaticon-success",
-    value: 1230,
+    value: 150,
     suffix: "+",
-    text: "Successful Projects",
+    text: "Business websites delivered",
     delay: "0ms",
   },
   {
     icon: "flaticon-marketing",
-    value: 98,
-    suffix: "%",
-    text: "Best Result Outcome",
+    value: 25,
+    suffix: "+",
+    text: "Digital growth initiatives",
     delay: "300ms",
   },
   {
     icon: "flaticon-promotion",
-    value: 64,
-    suffix: "%",
-    text: "Cover Marketing",
+    value: 18,
+    suffix: "+",
+    text: "AI and automation systems",
     delay: "600ms",
   },
   {
     icon: "flaticon-diplomat",
-    value: 2890,
-    suffix: "+",
-    text: "Satisfied Customers",
+    value: 24,
+    suffix: "/7",
+    text: "Support-minded project delivery",
     delay: "900ms",
   },
 ];
@@ -80,8 +80,8 @@ const FunFactSection: React.FC = (): JSX.Element => {
 
           <div className="title-box text-center">
             <h3 className="title">
-              We craft bold digital experiences that grow <br />
-              brands & turn ideas into impact.
+              We build digital systems that help businesses <br />
+              communicate clearly, operate better and grow with confidence.
             </h3>
 
             <div className="exp-box" data-aos="fade-up" data-aos-delay="300">
@@ -94,7 +94,7 @@ const FunFactSection: React.FC = (): JSX.Element => {
                 </defs>
                 <text>
                   <textPath xlinkHref="#circle">
-                    Since 1885 Since 1885 Since 1885 Since 1885 Since 1885
+                    Strategy • Design • Development • Support
                   </textPath>
                 </text>
               </svg>

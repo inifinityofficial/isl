@@ -8,7 +8,7 @@ const accordionData = [
     category: "Marketing",
     description:
       "We provide a diverse array of systems, each tailored to streamline your operations and enhance productivity. Whether you require assistance with data process automation or any other specialized need.",
-    link: "/page-service-details",
+    link: "/services/ai-automation-workflow-solutions",
     icon: "flaticon-targeted-marketing",
   },
   {
@@ -16,7 +16,7 @@ const accordionData = [
     category: "Technology",
     description:
       "We provide a diverse array of systems, each tailored to streamline your operations and enhance productivity. Whether you require assistance with data process automation or any other specialized need.",
-    link: "/page-service-details",
+    link: "/services/custom-software-development",
     icon: "flaticon-targeted-marketing",
   },
   {
@@ -24,7 +24,7 @@ const accordionData = [
     category: "Marketing",
     description:
       "We provide a diverse array of systems, each tailored to streamline your operations and enhance productivity. Whether you require assistance with data process automation or any other specialized need.",
-    link: "/page-service-details",
+    link: "/services/rag-knowledge-based-ai-systems",
     icon: "flaticon-targeted-marketing",
   },
   {
@@ -32,7 +32,7 @@ const accordionData = [
     category: "Development",
     description:
       "We provide a diverse array of systems, each tailored to streamline your operations and enhance productivity. Whether you require assistance with data process automation or any other specialized need.",
-    link: "/page-service-details",
+    link: "/services/web-application-development",
     icon: "flaticon-targeted-marketing",
   },
 ];

@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import { SERVICE_MENU_GROUPS } from "../data/services";
 
 interface MobileMenuProps {
   extraClassName?: string;
@@ -44,30 +45,16 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ extraClassName }) => {
       <li><Link href="/">Home</Link></li>
       <li><Link href="/page-about">About</Link></li>
       <li><Link href="/page-testimonial">Testimonial</Link></li>
-    <li className="dropdown"><Link href="/page-services">Services</Link>
+    <li className="dropdown"><Link href="/services">Services</Link>
         <ul className={`mobile-services ${isActive.key === 3 ? "d-block" : "d-none"}`}>
-            <li className="mobile-service-heading">Web &amp; Software Development</li>
-            <li><Link href="/page-service-details">Web Development</Link></li>
-            <li><Link href="/page-service-details">Web Application Development</Link></li>
-            <li><Link href="/page-service-details">Custom Software Development</Link></li>
-            <li><Link href="/page-service-details">Mobile App Development</Link></li>
-            <li><Link href="/page-service-details">E-commerce Development</Link></li>
-            <li><Link href="/page-service-details">WordPress &amp; CMS Development</Link></li>
-            <li><Link href="/page-service-details">UI/UX Design</Link></li>
-            <li><Link href="/page-service-details">Software Maintenance &amp; Support</Link></li>
-            <li className="mobile-service-heading">AI &amp; Automation</li>
-            <li><Link href="/page-service-details">AI Software Solutions</Link></li>
-            <li><Link href="/page-service-details">AI Chatbots &amp; Virtual Assistants</Link></li>
-            <li><Link href="/page-service-details">AI Agent Development</Link></li>
-            <li><Link href="/page-service-details">AI Automation &amp; Workflow Solutions</Link></li>
-            <li><Link href="/page-service-details">Generative AI Solutions</Link></li>
-            <li><Link href="/page-service-details">AI-Powered Web &amp; Mobile Apps</Link></li>
-            <li><Link href="/page-service-details">Custom AI Integration &amp; API Development</Link></li>
-            <li><Link href="/page-service-details">RAG &amp; Knowledge-Based AI Systems</Link></li>
-            <li className="mobile-service-heading">Growth &amp; Digital</li>
-            <li><Link href="/page-service-details">SEO &amp; Digital Marketing</Link></li>
-            <li><Link href="/page-service-details">Performance Optimization</Link></li>
-            <li><Link href="/page-service-details">Conversion Rate Optimization (CRO)</Link></li>
+            {SERVICE_MENU_GROUPS.map((group) => (
+              <Fragment key={group.heading}>
+                <li className="mobile-service-heading">{group.heading}</li>
+                {group.items.map((item) => (
+                  <li key={item.slug}><Link href={`/services/${item.slug}`}>{item.title}</Link></li>
+                ))}
+              </Fragment>
+            ))}
         </ul>
         <div className={isActive.key === 3 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(3)}><i className="fa fa-angle-down"/></div>
     </li>
@@ -103,7 +90,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ extraClassName }) => {
       <li className="dropdown"><Link href="/">Services</Link>
         <ul className={isActive.key === 3 ? "d-block" : "d-none"}>
           <li><Link href="/page-services">Services</Link></li>
-          <li><Link href="/page-service-details">Services Details</Link></li>
+          <li><Link href="/services/web-development">Services Details</Link></li>
         </ul>
         <div className={isActive.key === 3 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(3)}><i className="fa fa-angle-down"/></div>
       </li>

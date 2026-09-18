@@ -12,6 +12,7 @@ const services = [
     image: "/assets/images/resource/service1-1.jpg",
     icon: "flaticon-laptop",
     title: "Web Design",
+    href: "/services/ui-ux-design",
     desc: "There are many variation of passages of Lorem Ipsum available form.",
     list: [
       "Fully Responsive",
@@ -24,6 +25,7 @@ const services = [
     image: "/assets/images/resource/service1-2.jpg",
     icon: "flaticon-health-check",
     title: "Web Development",
+    href: "/services/web-development",
     desc: "There are many variation of passages of Lorem Ipsum available form.",
     list: [
       "Fully Responsive",
@@ -36,6 +38,7 @@ const services = [
     image: "/assets/images/resource/service1-3.jpg",
     icon: "flaticon-promotion",
     title: "Digital Marketing",
+    href: "/services/seo-digital-marketing",
     desc: "There are many variation of passages of Lorem Ipsum available form.",
     list: [
       "Fully Responsive",
@@ -48,6 +51,7 @@ const services = [
     image: "/assets/images/resource/service1-1.jpg",
     icon: "flaticon-laptop",
     title: "Web Design",
+    href: "/services/ui-ux-design",
     desc: "There are many variation of passages of Lorem Ipsum available form.",
     list: [
       "Fully Responsive",
@@ -60,6 +64,7 @@ const services = [
     image: "/assets/images/resource/service1-2.jpg",
     icon: "flaticon-health-check",
     title: "Web Development",
+    href: "/services/web-development",
     desc: "There are many variation of passages of Lorem Ipsum available form.",
     list: [
       "Fully Responsive",
@@ -72,6 +77,7 @@ const services = [
     image: "/assets/images/resource/service1-3.jpg",
     icon: "flaticon-promotion",
     title: "Digital Marketing",
+    href: "/services/seo-digital-marketing",
     desc: "There are many variation of passages of Lorem Ipsum available form.",
     list: [
       "Fully Responsive",
@@ -125,7 +131,7 @@ const ServiceSectionFour: React.FC = (): JSX.Element => {
                   {/* Image Box */}
                   <div className="image-box">
                     <figure className="image">
-                      <Link href="/page-service-details">
+                      <Link href={service.href}>
                         <img
                           src={service.image}
                           alt={service.title}
@@ -140,7 +146,7 @@ const ServiceSectionFour: React.FC = (): JSX.Element => {
                   {/* Content Box */}
                   <div className="content-box p-6">
                     <h4 className="title">
-                      <Link href="/page-service-details">{service.title}</Link>
+                      <Link href={service.href}>{service.title}</Link>
                     </h4>
                     <div className="text">{service.desc}</div>
 
@@ -154,7 +160,7 @@ const ServiceSectionFour: React.FC = (): JSX.Element => {
                     </ul>
 
                     <div className="btn-box">
-                      <Link href="/page-service-details" className="readmore">
+                      <Link href={service.href} className="readmore">
                         Discover More
                       </Link>
                     </div>

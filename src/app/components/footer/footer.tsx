@@ -80,9 +80,6 @@ const Footer: React.FC<FooterProps> = () => {
                       <Link href="/page-service">Our Services</Link>
                     </li>
                     <li>
-                      <Link href="/page-project">Recent Projects</Link>
-                    </li>
-                    <li>
                       <Link href="/page-blog">Upcoming News</Link>
                     </li>
                     <li>
@@ -97,9 +94,6 @@ const Footer: React.FC<FooterProps> = () => {
                 <div className="footer-widget links-widget two">
                   <h5 className="widget-title">Explore</h5>
                   <ul className="user-links">
-                    <li>
-                      <Link href="/page-team">Meet the Team</Link>
-                    </li>
                     <li>
                       <Link href="/page-contact">Support</Link>
                     </li>
@@ -172,15 +166,15 @@ const Footer: React.FC<FooterProps> = () => {
         <div className="auto-container">
           <div className="inner-container">
             <div className="copyright-text">
-              © Copyright 2025 by Company.com
+              © Copyright 2026 by <Link href="#">Infinity Software Labs</Link>. All Rights Reserved.
             </div>
             <ul className="footer-nav">
               <li>Terms & Conditions</li>
               <li>Privacy Policy</li>
             </ul>
-            <div className="scroll-to-top scroll-to-target" data-target="html">
+          {  <div className="scroll-to-top scroll-to-target" data-target="html">
               Top <span className="fa fa-arrow-up"></span>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

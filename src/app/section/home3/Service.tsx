@@ -6,21 +6,21 @@ import Link from "next/link";
 
 const services = [
   {
-    href: "/page-service-details",
+    href: "/services/ui-ux-design",
     image: "/assets/images/service/service-image1.jpg",
     category: "BRANDING",
     title: "Brand Design & Logo Design",
     delay: "0ms",
   },
   {
-    href: "/page-service-details",
+    href: "/services/wordpress-cms-development",
     image: "/assets/images/service/service-image2.jpg",
     category: "Customization",
     title: "WordPress & Marketing",
     delay: "300ms",
   },
   {
-    href: "/page-service-details",
+    href: "/services/seo-digital-marketing",
     image: "/assets/images/service/service-image3.jpg",
     category: "Development",
     title: "Digital Marketing",

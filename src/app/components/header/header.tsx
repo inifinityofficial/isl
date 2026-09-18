@@ -53,9 +53,9 @@ const Header: React.FC<HeaderProps> = ({ handleOpen, handleRemove, handleRemove2
           <div className="top-right">
             <div className="inner">
               <ul className="nav-list">
-                <li><Link href="#">About</Link></li>
-                <li><Link href="#">Support</Link></li>
-                <li><Link href="#">Help</Link></li>
+                <li><Link href="/page-about">About</Link></li>
+                <li><Link href="/page-contact">Support</Link></li>
+                <li><Link href="/page-contact">Help</Link></li>
               </ul>
               <ul className="social-icon-one light">
                 <li>

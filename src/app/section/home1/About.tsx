@@ -14,44 +14,42 @@ const About: React.FC = (): JSX.Element => {
                     <div className="inner-column">
                         <div className="sec-title">
                             <div className="sub-title">About Us</div>
-                            <h2 className="text-reveal-anim">Welcome to Our Smart <br/> Digital Agency</h2>
-                            <div className="text">There are many variations of passages of Lorem Ipsum available, but
-                                the majority have suffered alteration in some form, by injected humour, or
-                                randomised words which don't look even slightly believable.</div>
+                            <h2 className="text-reveal-anim">A digital partner for <br/> web, software and AI projects</h2>
+                            <div className="text">Infinity Software Labs works with businesses that need reliable digital systems, from brand websites and web applications to custom software and AI automation. We focus on solutions that are practical, scalable and aligned with real business goals.</div>
                         </div>
                         <div className="icon-outer-box row">
                             <div className="icon-box col-lg-6 col-md-6 col-sm-6">
                                 <div className="inner-box">
                                     <i className="icon flaticon-graphic-design"></i>
-                                    <h6 className="title">Quality Services</h6>
+                                    <h6 className="title">Business-first design</h6>
                                 </div>
                             </div>
                             <div className="icon-box col-lg-6 col-md-6 col-sm-6">
                                 <div className="inner-box">
                                     <i className="icon flaticon-targeted-marketing"></i>
-                                    <h6 className="title">Innovation Ideas</h6>
+                                    <h6 className="title">Scalable digital systems</h6>
                                 </div>
                             </div>
                         </div>
                         <div className="skills">
                             <div className="skill-item">
                                 <div className="skill-header">
-                                    <div className="skill-title">Digital Marketing</div>
+                                    <div className="skill-title">Custom delivery</div>
                                 </div>
                                 <ProgressBar2 percentage={90} duration={3000} />
                             </div>
                         </div>
                         <ul className="list-style-two">
-                            <li><i className="fa fa-check-circle"></i> Many variations of passages of Lorem Ipsum</li>
-                            <li><i className="fa fa-check-circle"></i> Many variations of passages of Lorem</li>
+                            <li><i className="fa fa-check-circle"></i> Professional websites and landing pages for service businesses</li>
+                            <li><i className="fa fa-check-circle"></i> Custom software, automation and AI integration built around your workflow</li>
                         </ul>
                         <div className="btn-box">
                             <Link className="theme-btn-main" href="/page-contact">
                                 <span className="theme-btn-arrow-left"><i className="fa fa-arrow-right"></i></span>
-                                <span className="theme-btn">Discover More</span>
+                                <span className="theme-btn">Discuss Your Project</span>
                                 <span className="theme-btn-arrow-right"><i className="fa fa-arrow-right"></i></span>
                             </Link>
-                            <div className="sign"><img src="/assets/images/icons/sign.png" alt="Image"/></div>
+                            <div className="sign"><img src="/assets/images/icons/sign.png" alt="Infinity Software Labs"/></div>
                         </div>
                     </div>
                 </div>

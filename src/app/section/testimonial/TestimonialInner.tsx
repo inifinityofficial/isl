@@ -61,7 +61,24 @@ const testimonialsBottom = [
 
 const TestimonialSectionTwo: React.FC = (): JSX.Element => {
   return (
-    <section className="testimonial-section-two pb-120">
+    <>
+      <section className="testimonial-section-two pb-0">
+        <div className="auto-container">
+          <div className="row mb-5">
+            <div className="col-lg-10 mx-auto text-center">
+              <div className="sec-title">
+                <div className="sub-title">Client feedback</div>
+                <h2 className="text-reveal-anim">What businesses value in working with Infinity Software Labs</h2>
+                <div className="text">
+                  Client experiences can offer useful insight into how our team approaches projects,
+                  communicates through delivery, and builds digital systems that support day-to-day operations.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="testimonial-section-two pb-120">
       <div className="auto-container">
         <div className="row">
           <div className="swiper-outer">
@@ -160,6 +177,18 @@ const TestimonialSectionTwo: React.FC = (): JSX.Element => {
         </div>
       </div>
     </section>
+      <section className="pb-120">
+        <div className="auto-container">
+          <div className="text-center">
+            <div className="btn-box">
+              <a href="/page-contact" className="theme-btn btn-style-one">
+                <span className="btn-title">Discuss Your Project</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

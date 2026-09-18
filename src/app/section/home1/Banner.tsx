@@ -32,13 +32,13 @@ const BannerSection: React.FC = (): JSX.Element => {
                   <div className="content-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                     <div className="inner-column">
                       <h1 className="title animate-2">
-                        Grow Your Business Bigger and{" "}
-                        <span className="color">Better</span>
+                        Web Development Company for
+                        <span className="color"> Websites, Apps & AI Solutions</span>
                       </h1>
                       <div className="text animate-3">
-                        An award-winning CEO agency with disciplines in digital
-                        marketing, design, and website development. Focused on
-                        understanding you.
+                        Infinity Software Labs designs and builds professional websites,
+                        custom software, web applications, and AI-powered systems that help
+                        businesses operate more efficiently and grow with confidence.
                       </div>
                       <div className="btn-box animate-4">
                         {slide === 1 ? (
@@ -46,7 +46,7 @@ const BannerSection: React.FC = (): JSX.Element => {
                             <span className="theme-btn-arrow-left">
                               <i className="fa fa-arrow-right"></i>
                             </span>
-                            <span className="theme-btn">Discover More</span>
+                            <span className="theme-btn">Book a Discovery Call</span>
                             <span className="theme-btn-arrow-right">
                               <i className="fa fa-arrow-right"></i>
                             </span>
@@ -54,12 +54,12 @@ const BannerSection: React.FC = (): JSX.Element => {
                         ) : (
                           <>
                             <Link
-                              href="/page-about"
+                              href="/page-contact"
                               className="theme-btn btn-style-one"
                             >
-                              <span className="btn-title">Discover More</span>
+                              <span className="btn-title">Book a Discovery Call</span>
                             </Link>
-                            <Link href="/page-about" className="readmore">
+                            <Link href="/services" className="readmore">
                               <i className="fa fa-arrow-right"></i>
                             </Link>
                           </>
@@ -111,7 +111,7 @@ const BannerSection: React.FC = (): JSX.Element => {
               <div key={num} className="author-image">
                 <Image
                   src={`/assets/images/banner/author-${num}.jpg`}
-                  alt={`Author ${num}`}
+                  alt={`Project collaborator ${num}`}
                   width={60}
                   height={60}
                 />
@@ -119,12 +119,12 @@ const BannerSection: React.FC = (): JSX.Element => {
             ))}
           </div>
           <div className="text">
-            Trusted by <span className="number">89,000</span> businesses
+            Strategy, design, development and support for growing businesses
           </div>
         </div>
         <div className="success-text">
           <div className="text">
-            <span className="number">96%</span> Success rate
+            Websites, software, automation and AI-powered experiences
           </div>
         </div>
       </div>

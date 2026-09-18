@@ -9,6 +9,7 @@ const services = [
     count: '01',
     category: 'BRANDING',
     title: 'Brand Design & Logo Design',
+    href: '/services/ui-ux-design',
     image: '/assets/images/resource/service2-1.jpg',
     delay: '0ms',
   },
@@ -18,6 +19,7 @@ const services = [
     count: '02',
     category: 'Customization',
     title: 'WordPress & Marketing',
+    href: '/services/wordpress-cms-development',
     image: '/assets/images/resource/service2-2.jpg',
     delay: '200ms',
   },
@@ -27,6 +29,7 @@ const services = [
     count: '03',
     category: 'Development',
     title: 'Businesses Solutions',
+    href: '/services/custom-software-development',
     image: '/assets/images/resource/service2-3.jpg',
     delay: '400ms',
   },
@@ -36,6 +39,7 @@ const services = [
     count: '04',
     category: 'Improvements',
     title: 'Digital Marketing',
+    href: '/services/seo-digital-marketing',
     image: '/assets/images/resource/service2-4.jpg',
     delay: '600ms',
   },
@@ -66,12 +70,12 @@ const ServiceSectionTwo: React.FC = (): JSX.Element => {
                   <div className="count">{service.count}</div>
                   <div className="cat">{service.category}</div>
                   <h4 className="title">
-                    <Link href="/page-service-details">{service.title}</Link>
+                    <Link href={service.href}>{service.title}</Link>
                   </h4>
                 </div>
                 <div className="image-box">
                   <figure className="image">
-                    <Link href="/page-service-details">
+                    <Link href={service.href}>
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -81,7 +85,7 @@ const ServiceSectionTwo: React.FC = (): JSX.Element => {
                       />
                     </Link>
                   </figure>
-                  <Link href="/page-service-details" className="readmore" aria-label="Read more">
+                  <Link href={service.href} className="readmore" aria-label="Read more">
                     <i className="fa fa-arrow-up-right" />
                   </Link>
                 </div>

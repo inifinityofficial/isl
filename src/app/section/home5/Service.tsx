@@ -9,6 +9,7 @@ const services = [
     icon: "flaticon-marketing",
     imgSrc: "/assets/images/service/service-five-image.jpg",
     title: "Brand Design",
+    href: "/services/ui-ux-design",
     text: "There are many variation of passages of Lorem Ipsum available form.",
     count: "01",
     delay: "0ms",
@@ -17,6 +18,7 @@ const services = [
     icon: "flaticon-graphic-design",
     imgSrc: "/assets/images/service/service-five-image2.jpg",
     title: "Web Design",
+    href: "/services/web-development",
     text: "There are many variation of passages of Lorem Ipsum available form.",
     count: "02",
     delay: "200ms",
@@ -25,6 +27,7 @@ const services = [
     icon: "flaticon-laptop",
     imgSrc: "/assets/images/service/service-five-image3.jpg",
     title: "Development",
+    href: "/services/custom-software-development",
     text: "There are many variation of passages of Lorem Ipsum available form.",
     count: "03",
     delay: "400ms",
@@ -33,6 +36,7 @@ const services = [
     icon: "flaticon-promotion",
     imgSrc: "/assets/images/service/service-five-image4.jpg",
     title: "Marketing",
+    href: "/services/seo-digital-marketing",
     text: "There are many variation of passages of Lorem Ipsum available form.",
     count: "04",
     delay: "600ms",
@@ -74,7 +78,7 @@ const ServiceSectionFive: React.FC = (): JSX.Element => {
                 {/* Image */}
                 <div className="image-box">
                   <figure className="image">
-                    <Link href="/page-service-details">
+                    <Link href={service.href}>
                       <Image
                         src={service.imgSrc}
                         alt={service.title}
@@ -89,7 +93,7 @@ const ServiceSectionFive: React.FC = (): JSX.Element => {
                 {/* Content */}
                 <div className="content-box">
                   <h4 className="title">
-                    <Link href="/page-service-details">{service.title}</Link>
+                    <Link href={service.href}>{service.title}</Link>
                   </h4>
                   <div className="text">{service.text}</div>
                   <div className="count">{service.count}</div>

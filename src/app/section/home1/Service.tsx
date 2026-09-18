@@ -12,32 +12,37 @@ const services = [
   {
     img: "/assets/images/resource/service1-1.jpg",
     icon: "flaticon-laptop",
-    title: "Web Design",
-    text: "There are many variation of passages of Lorem Ipsum available form.",
+    title: "Web Development",
+    href: "/services/web-development",
+    text: "Modern, responsive business websites designed to build credibility, improve conversion, and support long-term growth.",
   },
   {
     img: "/assets/images/resource/service1-2.jpg",
     icon: "flaticon-health-check",
-    title: "Web Development",
-    text: "There are many variation of passages of Lorem Ipsum available form.",
+    title: "Custom Software Development",
+    href: "/services/custom-software-development",
+    text: "Tailored software systems that support operations, workflows, and product requirements without forcing business workarounds.",
   },
   {
     img: "/assets/images/resource/service1-3.jpg",
     icon: "flaticon-promotion",
-    title: "Digital Marketing",
-    text: "There are many variation of passages of Lorem Ipsum available form.",
+    title: "Web Application Development",
+    href: "/services/web-application-development",
+    text: "Interactive business tools, portals and dashboards built around real processes, user journeys and internal needs.",
   },
   {
     img: "/assets/images/resource/service1-1.jpg",
     icon: "flaticon-laptop",
-    title: "Web Design",
-    text: "There are many variation of passages of Lorem Ipsum available form.",
+    title: "AI Software Solutions",
+    href: "/services/ai-software-solutions",
+    text: "AI-powered systems, chatbots and workflow automation designed to improve productivity and customer experience.",
   },
   {
     img: "/assets/images/resource/service1-2.jpg",
     icon: "flaticon-health-check",
-    title: "Web Development",
-    text: "There are many variation of passages of Lorem Ipsum available form.",
+    title: "SEO & Digital Growth",
+    href: "/services/seo-digital-marketing",
+    text: "Performance-focused digital strategy that improves visibility, user experience and opportunities for business growth.",
   },
 ];
 
@@ -82,7 +87,7 @@ const ServicesSection: React.FC = (): JSX.Element => {
                     {/* Image */}
                     <div className="image-box">
                       <figure className="image">
-                        <Link href="/page-service-details">
+                        <Link href={item.href}>
                           <Image
                             src={item.img}
                             alt={item.title}
@@ -100,26 +105,24 @@ const ServicesSection: React.FC = (): JSX.Element => {
                     {/* Text Content */}
                     <div className="content-box">
                       <h4 className="title">
-                        <Link href="/page-service-details">{item.title}</Link>
+                        <Link href={item.href}>{item.title}</Link>
                       </h4>
                       <div className="text">{item.text}</div>
                       <ul className="list-style-three light">
                         <li>
-                          <i className="fal fa-arrow-right"></i> Fully Responsive
+                          <i className="fal fa-arrow-right"></i> Business-focused strategy
                         </li>
                         <li>
-                          <i className="fal fa-arrow-right"></i> Creativity in
-                          Designs
+                          <i className="fal fa-arrow-right"></i> Clean user experience
                         </li>
                         <li>
-                          <i className="fal fa-arrow-right"></i> SEO Optimized
-                          Content
+                          <i className="fal fa-arrow-right"></i> Scalable implementation
                         </li>
                       </ul>
 
                       <div className="btn-box">
-                        <Link href="/page-about" className="readmore">
-                          Discover More
+                        <Link href={item.href} className="readmore">
+                          Learn more
                         </Link>
                       </div>
                     </div>

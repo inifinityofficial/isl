@@ -14,35 +14,35 @@ const blogPosts = [
     date: "20",
     month: "Jan",
     comments: 2,
-    title: "10 Easy Strategies to Harness the Power of AI",
+    title: "How to choose the right web development partner for your business",
   },
   {
     img: "/assets/images/resource/news1-2.jpg",
     date: "26",
     month: "Jan",
     comments: 6,
-    title: "Web Accessibility Not Just a Trend, Necessity",
+    title: "Why AI automation works best when it follows clear business rules",
   },
   {
     img: "/assets/images/resource/news1-3.jpg",
     date: "30",
     month: "Jan",
     comments: 4,
-    title: "The Power of Storytelling in Digital Branding",
+    title: "What a strong digital strategy should look like for a modern brand",
   },
    {
     img: "/assets/images/resource/news1-1.jpg",
     date: "20",
     month: "Jan",
     comments: 2,
-    title: "10 Easy Strategies to Harness the Power of AI",
+    title: "Why website performance matters for trust, SEO and conversion",
   },
   {
     img: "/assets/images/resource/news1-2.jpg",
     date: "26",
     month: "Jan",
     comments: 6,
-    title: "Web Accessibility Not Just a Trend, Necessity",
+    title: "Business software should reduce friction, not create more of it",
   },
 ];
 
@@ -60,9 +60,9 @@ const NewsSection: React.FC = (): JSX.Element => {
           <div className="content-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
             <div className="inner-column">
               <div className="sec-title">
-                <div className="sub-title">Blog posts</div>
+                <div className="sub-title">Insights</div>
                 <h2 className="text-reveal-anim">
-                  Recent Updates & Insights from Our Blog
+                  Practical thinking on web, software and digital growth
                 </h2>
               </div>
               <div className="outer-box">
@@ -111,7 +111,7 @@ const NewsSection: React.FC = (): JSX.Element => {
                         <div className="image-box">
                           <figure className="image">
                             <Link href="/page-blog-details">
-                              <img src={post.img} alt="Blog" />
+                              <img src={post.img} alt={post.title} />
                             </Link>
                           </figure>
                           <div className="date-box">
@@ -131,8 +131,7 @@ const NewsSection: React.FC = (): JSX.Element => {
                               <Link href="/page-blog-details">{post.title}</Link>
                             </h4>
                             <div className="text">
-                              There are many variations of passages of one Lorem
-                              Ipsum available
+                              Relevant guidance on building stronger digital systems, better user experiences and smarter business workflows.
                             </div>
                           </div>
                           <div className="btn-box">

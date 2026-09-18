@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const serviceList = [
-  "Web Development",
-  "Businesses Solutions",
-  "Digital Marketing",
-  "Influencer Marketing",
-  "Project Management",
-  "Analytics & Report",
+  { title: "Web Development", href: "/services/web-development" },
+  { title: "Custom Software Development", href: "/services/custom-software-development" },
+  { title: "Digital Marketing", href: "/services/seo-digital-marketing" },
+  { title: "UI/UX Design", href: "/services/ui-ux-design" },
+  { title: "AI Agent Development", href: "/services/ai-agent-development" },
+  { title: "Performance Optimization", href: "/services/performance-optimization" },
 ];
 
 const faqs = [
@@ -60,8 +60,8 @@ const ServiceDetailsSection: React.FC = (): JSX.Element => {
                 <ul>
                   {serviceList.map((item, index) => (
                     <li key={index}>
-                      <Link href="/page-service-details">
-                        {item}
+                      <Link href={item.href}>
+                        {item.title}
                         <i className="icon fas fa-angle-right"></i>
                       </Link>
                     </li>
@@ -123,7 +123,7 @@ const ServiceDetailsSection: React.FC = (): JSX.Element => {
 
             <div className="image-box mt-4">
               <figure className="image">
-                <Link href="/page-service-details">
+                <Link href="/services/web-development">
                   <Image
                     src="/assets/images/resource/ser-details.jpg"
                     alt="Service Details"

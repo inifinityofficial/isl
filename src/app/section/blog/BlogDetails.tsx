@@ -1,282 +1,139 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { submitWeb3Form } from "../../../utils/web3form";
+import { BlogPost, BlogFaq, blogPosts, getRelatedBlogPosts } from "../../data/blog";
 
-type Status = { type: "success" | "error" | "info"; text: string } | null;
+interface BlogDetailsProps {
+  post?: BlogPost;
+  relatedPosts?: BlogPost[];
+}
 
-const BlogDetailsSection: React.FC = (): JSX.Element => {
-  const [status, setStatus] = useState<Status>(null);
-  const [submitting, setSubmitting] = useState(false);
+const formatDate = (value: string): string =>
+  new Date(value).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    setStatus({ type: "info", text: "Please wait..." });
-    setSubmitting(true);
-    try {
-      const message = await submitWeb3Form(form);
-      setStatus({ type: "success", text: message });
-      form.reset();
-    } catch (err) {
-      setStatus({
-        type: "error",
-        text: err instanceof Error ? err.message : "Something went wrong!",
-      });
-    } finally {
-      setSubmitting(false);
-      setTimeout(() => setStatus(null), 5000);
-    }
-  };
+const BlogDetailsSection: React.FC<BlogDetailsProps> = ({ post, relatedPosts }): JSX.Element => {
+  const article = post ?? blogPosts[0];
+  const related = relatedPosts ?? getRelatedBlogPosts(article.slug);
 
   return (
     <section className="blog-details-section">
-        <div className="auto-container">
-            <div className="row">
-                <div className="contents-column col-lg-8">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="blog-content">
-                                <h2 className="title">Behind the Pixels Meet the Creative </h2>
-                                <ul className="blog-author">
-                                    <li className="autor-date">October 23,2026</li>
-                                    <li className="author-name">By Jaka smid</li>
-                                    <li className="author-comment">Do it yourself</li>
-                                    <li className="author-credit">Business.creative.computer</li>
-                                </ul>
-                            </div>
-                            <div className="image-box">
-                                <figure className="image"><Link href="page-blog-details"><img src="/assets/images/resource/blg-details.jpg" alt="Image"/></Link></figure>
-                            </div>
-                            <ul className="blog-author-coment">
-                                    <li className="autor-like"><i className="icon far fa-heart"></i> 0 Likes</li>
-                                    <li className="author-coment"><i className="icon far fa-comments"></i> Comments (05)</li>
-                                </ul>
-                            <div className="expert-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore to
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo .At
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                            <div className="expert-desc">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</p>
-                            </div>
-                            <div className="blog-quote">
-                                <p>Crafting compelling digital experiences that captivate audiences and  drive meaningful connections. Our digital agency combines innovation,  strategy, and expertise to fuel your online success.</p>
-                                <figure className="image"><img src="/assets/images/icons/quote.png" alt="Image"/></figure>
-                            </div>
-                            <div className="blog-content2">
-                                <h3 className="title">Latest News more Information</h3>
-                            </div>
-                            <div className="expert-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore to
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo .At
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                            <div className="expert-desc">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</p>
-                            </div>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6">
-                                    <div className="blog-contents pt-15">
-                                        <h3 className="title">Important Details</h3>
-                                    </div>
-                                    <ul className="list-style-two pt-15">
-                                        <li><i className="fa fa-check-circle"></i> Spa services are all about relaxation</li>
-                                        <li><i className="fa fa-check-circle"></i> Beauty services, on the other tend to focus</li>
-                                        <li><i className="fa fa-check-circle"></i> Treatments to enhance your natural beauty.</li>
-                                        <li><i className="fa fa-check-circle"></i> Designed to provide moisture to dry</li>
-                                        <li><i className="fa fa-check-circle"></i> For theatrical performances or Halloween</li>
-                                    </ul>
-                                </div>
-                                <div className="col-lg-6 col-md-6">
-                                    <div className="image-box pt-25">
-                                        <figure className="image"><img src="/assets/images/resource/blg-d.jpg" alt="Image"/></figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row blog-detail">
-                                <div className="col-lg-4">
-                                    <div className="icon-inner-box">
-                                        <i className="icon fa fa-arrow-left"></i>
-                                        <div className="content-box">
-                                            <h5 className="title">Previous post</h5>
-                                            <h6 className="title2">Our passion, your success</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <ul className="social-icon-five">
-                                        <li><Link href="https://www.linkedin.com/company/infinity-software-labs-official/"><i className="fab fa-linkedin-in"></i></Link></li>
-                                        <li><Link href="https://www.instagram.com/infinitysoftwarelabs/?hl=en"><i className="fab fa-instagram"></i></Link></li>
-                                    </ul>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="icon-inner-box">
-                                        <div className="content-box">
-                                            <h5 className="title">Next post</h5>
-                                            <h6 className="title2">Worth of standard</h6>
-                                        </div>
-                                        <i className="icon fa fa-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="blog-details-comment">
-                                <h3 className="title">1 Comment</h3>
-                                <div className="blog-details-comment-thumb">
-                                    <img src="/assets/images/resource/blg-author.png" alt="autor"/>
-                                </div>
+      <div className="auto-container">
+        <div className="row">
+          <div className="contents-column col-lg-8">
+            <div className="blog-content">
+              <h2 className="title">{article.title}</h2>
+              <ul className="blog-author">
+                <li className="autor-date">{formatDate(article.publishedAt)}</li>
+                <li className="author-name">By {article.author}</li>
+                <li className="author-comment">{article.category}</li>
+                <li className="author-credit">{article.readingTime}</li>
+              </ul>
+            </div>
 
-                                <div className="blog-details-comment-content">
-                                    <h5 className="name">Firoj Ahmed</h5>
-                                    <span className="blg-date">12 August, 2026</span>
-                                    <p>However, here are some well-regarded car dealerships known for their  customer service,<br/> inventory, and overall reputation. It’s always a good  idea to research
-                                    </p>
-                                    <div className="blog-details-comment-reply">
-                                    <Link href="#">Reply</Link>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
+            <div className="expert-desc">
+              <p>{article.excerpt}</p>
+            </div>
+
+            {article.sections.map((section, index) => (
+              <div key={`${article.slug}-section-${index}`} className="blog-content2">
+                {section.heading ? <h3 className="title">{section.heading}</h3> : null}
+                {section.paragraphs.map((paragraph, paragraphIndex) => (
+                  <div className="expert-desc" key={`${article.slug}-paragraph-${index}-${paragraphIndex}`}>
+                    <p>{paragraph}</p>
+                  </div>
+                ))}
+                {section.list && section.list.length > 0 ? (
+                  <ul className="list-style-two pt-15">
+                    {section.list.map((item, itemIndex) => (
+                      <li key={`${article.slug}-list-${index}-${itemIndex}`}>
+                        <i className="fa fa-check-circle"></i> {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {section.callout ? (
+                  <div className="blog-quote">
+                    <p>{section.callout}</p>
+                    <figure className="image"><img src="/assets/images/icons/quote.png" alt="Quote icon" /></figure>
+                  </div>
+                ) : null}
+              </div>
+            ))}
+
+            {article.faq && article.faq.length > 0 ? (
+              <div className="blog-content2 pt-30">
+                <h3 className="title">Frequently asked questions</h3>
+                <div className="accordion" style={{ marginTop: 20 }}>
+                  {article.faq.map((item: BlogFaq, index: number) => (
+                    <div className="accordion-item" key={`${article.slug}-faq-${index}`} style={{ marginBottom: 12, border: "1px solid #e7e7e7", padding: 12 }}>
+                      <h4 className="title" style={{ margin: 0, fontSize: 18 }}>{item.question}</h4>
+                      <p style={{ marginTop: 10, marginBottom: 0 }}>{item.answer}</p>
                     </div>
-                    <div className="comment-title">
-                        <h3 className="title">Write your comment</h3>
-                    </div>
-                    <div className="contact-form-four">
-                        <form method="post" onSubmit={handleSubmit} id="contact-form">
-                            <div className="row">
-                                <input type="hidden" name="access_key" value="79cd5a48-314a-46bc-9542-722ec0bdbb9e"/>
-                                <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <textarea name="message" placeholder="Write a Message" required></textarea>
-                                </div>
-                                <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" id="Yname" name="Yname" placeholder="Your Name" required/>
-                                </div>
-
-                                <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <input type="email" id="Yemail" name="Yemail" placeholder="Email Address" required/>
-                                </div>
-
-                                <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <input type="text" name="subject" placeholder="Subject" required/>
-                                </div>
-
-                                <div className="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <div className="btn-box">
-                                        <button type="submit" className="theme-btn btn-style-five" disabled={submitting}><span className="btn-title">{submitting ? "Sending..." : "send here"}</span></button>
-                                        <Link href="page-contact.html" className="readmore"></Link>
-                                    </div>
-                                </div>
-                            </div>
-                            {status && (
-                                <div className={`w3f-status show ${status.type}`}>
-                                    {status.type === "success" ? <i className="fa fa-check-circle"></i> : null}
-                                    {status.type === "error" ? <i className="fa fa-exclamation-circle"></i> : null}
-                                    {status.type === "info" ? <i className="fa fa-spinner fa-spin"></i> : null}
-                                    {status.text}
-                                </div>
-                            )}
-                        </form>
-                    </div>
+                  ))}
                 </div>
+              </div>
+            ) : null}
 
-            <div className="col-lg-4">
-                <div className="blog-sidebar">
-                        <div className="widget widget_search">
-                        <div className="search">
-                            <form action="/page-blog" method="get" role="search">
-                                <input type="text" name="s" placeholder="Type Here" title="Search for:" required/>
-                                <button type="submit" className="icons">Search</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div className="blog-sidebar-area">
-                        <div className="blog-post">
-                            <h3 className="title">Recent Posts</h3>
-                            <div className="recent-post-wrap">
-                                <div className="recent-post">
-                                    <div className="post-img">
-                                        <Link href="page-blog-details"><img src="/assets/images/resource/sidebar.jpg" alt="post img"/></Link>
-                                    </div>
-                                    <div className="post-content">
-                                        <h4 className="post-title"><Link href="page-blog-details">We deliver extraordinary spa treatments.</Link></h4>
-                                        <div className="post-date">
-                                            <Link href="page-blog-details"><i className="icon far fa-folder-open"></i>Category</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="recent-post">
-                                    <div className="post-img">
-                                        <Link href="page-blog-details"><img src="/assets/images/resource/sidebar2.jpg" alt="post img"/></Link>
-                                    </div>
-                                    <div className="post-content">
-                                        <h4 className="post-title"><Link href="page-blog-details">We deliver extraordinary spa treatments.</Link></h4>
-                                        <div className="post-date">
-                                            <Link href="page-blog-details"><i className="icon far fa-folder-open"></i>Category</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="recent-post">
-                                    <div className="post-img">
-                                        <Link href="page-blog-details"><img src="/assets/images/resource/sidebar3.jpg" alt="post img"/></Link>
-                                    </div>
-                                    <div className="post-content">
-                                        <h4 className="post-title"><Link href="page-blog-details">We deliver extraordinary spa treatments.</Link></h4>
-                                        <div className="post-date">
-                                            <Link href="page-blog-details"><i className="icon far fa-folder-open"></i>Category</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="blog-media">
-                            <h3 className="title">Social Media</h3>
-                            <ul>
-                                <li><i className="icon fab fa-instagram"></i>By Rovert</li>
-                                <p className="text">Instralation accecories of tyree  of readroom starline of shits ofline by
-                                at http/www.tweeter feeds/story.</p>
-                            </ul>
-                            <ul>
-                                <li><i className="icon fab fa-instagram"></i>By Steven</li>
-                                <p className="text">Instralation accecories of tyree  of readroom starline of shits ofline by
-                                at http/www.tweeter feeds/story.</p>
-                            </ul>
-                            <ul>
-                                <li><i className="icon fab fa-instagram"></i>By Richard</li>
-                                <p className="text">Instralation accecories of tyree  of readroom starline of shits ofline by
-                                at http/www.tweeter feeds/story.</p>
-                            </ul>
-                        </div>
-                        <div className="blog-categories">
-                            <h3 className="title">Archive</h3>
-                            <ul>
-                                <li>
-                                    <Link href="#">January 2025</Link> <span>(16)</span>
-                                </li>
-                                <li>
-                                    <Link href="#">February 2025</Link> <span>(12)</span>
-                                </li>
-                                <li>
-                                    <Link href="#">March 2025</Link> <span>(8)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="widget_tag_cloud">
-                          <h3 className="title">Tags</h3>
-                          <div className="tagcloud">
-                            <Link href="page-blog-details">Elevate</Link> <Link href="page-blog-details">Technology</Link> <Link href="page-blog-details">Industry</Link> <Link href="page-blog-details">Marketing</Link> <Link href="page-blog-details">Creatix</Link> <Link href="page-blog-details">Design</Link>
+            <div className="row blog-detail" style={{ marginTop: 30 }}>
+              <div className="col-lg-12">
+                <div className="blog-quote" style={{ marginBottom: 0 }}>
+                  <p>
+                    Need help building a more effective digital product or AI workflow? Explore our <Link href={article.serviceLink}>{article.serviceLabel}</Link> solutions built for faster execution and measurable business impact.
+                  </p>
+                  <figure className="image"><img src="/assets/images/icons/quote.png" alt="Quote icon" /></figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4">
+            <div className="blog-sidebar">
+              <div className="widget widget_search">
+                <div className="search">
+                  <form action="/page-blog" method="get" role="search">
+                    <input type="text" name="q" placeholder="Search articles" title="Search for:" required />
+                    <button type="submit" className="icons">Search</button>
+                  </form>
+                </div>
+              </div>
+
+              <div className="blog-sidebar-area">
+                <div className="blog-post">
+                  <h3 className="title">Related Posts</h3>
+                  <div className="recent-post-wrap">
+                    {related.map((related) => (
+                      <div className="recent-post" key={related.slug}>
+                        <div className="post-content">
+                          <h4 className="post-title">
+                            <Link href={`/blog/${related.slug}`}>{related.title}</Link>
+                          </h4>
+                          <div className="post-date">
+                            <Link href={`/blog/${related.slug}`}>
+                              <i className="icon far fa-folder-open"></i>{related.category}
+                            </Link>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    ))}
+                  </div>
                 </div>
+
+                <div className="widget_tag_cloud">
+                  <h3 className="title">Tags</h3>
+                  <div className="tagcloud">
+                    {article.tags.map((tag) => (
+                      <Link href={`/page-blog?q=${encodeURIComponent(tag)}`} key={`${article.slug}-tag-${tag}`}>{tag}</Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
   );
 };

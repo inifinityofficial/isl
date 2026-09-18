@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SERVICE_MENU_GROUPS } from '../data/services';
 
 interface NavLinksProps {
     extraClassName?: string;
@@ -12,36 +13,16 @@ const NavLinks: React.FC<NavLinksProps> = ({ extraClassName = "" }) => {
             <li className="current"><Link href="/">Home</Link></li>
             <li><Link href="/page-about">About</Link></li>
             <li><Link href="/page-testimonial">Testimonial</Link></li>
-            <li className="dropdown mega-menu-item"><Link href="/page-services">Services</Link>
+            <li className="dropdown mega-menu-item"><Link href="/services">Services</Link>
                 <div className="mega-menu">
-                    <div className="mega-menu-column">
-                        <h4>Web &amp; Software Development</h4>
-                        <Link href="/page-service-details">Web Development</Link>
-                        <Link href="/page-service-details">Web Application Development</Link>
-                        <Link href="/page-service-details">Custom Software Development</Link>
-                        <Link href="/page-service-details">Mobile App Development</Link>
-                        <Link href="/page-service-details">E-commerce Development</Link>
-                        <Link href="/page-service-details">WordPress &amp; CMS Development</Link>
-                        <Link href="/page-service-details">UI/UX Design</Link>
-                        <Link href="/page-service-details">Software Maintenance &amp; Support</Link>
-                    </div>
-                    <div className="mega-menu-column">
-                        <h4>AI &amp; Automation</h4>
-                        <Link href="/page-service-details">AI Software Solutions</Link>
-                        <Link href="/page-service-details">AI Chatbots &amp; Virtual Assistants</Link>
-                        <Link href="/page-service-details">AI Agent Development</Link>
-                        <Link href="/page-service-details">AI Automation &amp; Workflow Solutions</Link>
-                        <Link href="/page-service-details">Generative AI Solutions</Link>
-                        <Link href="/page-service-details">AI-Powered Web &amp; Mobile Apps</Link>
-                        <Link href="/page-service-details">Custom AI Integration &amp; API Development</Link>
-                        <Link href="/page-service-details">RAG &amp; Knowledge-Based AI Systems</Link>
-                    </div>
-                    <div className="mega-menu-column">
-                        <h4>Growth &amp; Digital</h4>
-                        <Link href="/page-service-details">SEO &amp; Digital Marketing</Link>
-                        <Link href="/page-service-details">Performance Optimization</Link>
-                        <Link href="/page-service-details">Conversion Rate Optimization (CRO)</Link>
-                    </div>
+                    {SERVICE_MENU_GROUPS.map((group) => (
+                        <div className="mega-menu-column" key={group.heading}>
+                            <h4>{group.heading}</h4>
+                            {group.items.map((item) => (
+                                <Link href={`/services/${item.slug}`} key={item.slug}>{item.title}</Link>
+                            ))}
+                        </div>
+                    ))}
                 </div>
             </li>
             <li><Link href="/page-blog">Blog</Link></li>
@@ -82,7 +63,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ extraClassName = "" }) => {
             <li className="dropdown"><Link href="#">Service</Link>
                 <ul>
                     <li><Link href="/page-services">Service</Link></li>
-                    <li><Link href="/page-service-details">Service Details</Link></li>
+                    <li><Link href="/services/web-development">Service Details</Link></li>
                 </ul>
             </li>
             <li className="dropdown"><Link href="#">Blog</Link>

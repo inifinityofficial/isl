@@ -11,31 +11,37 @@ import Link from "next/link";
 const services = [
   {
     title: "Web Design",
+    href: "/services/ui-ux-design",
     image: "/assets/images/resource/service1-1.jpg",
     icon: "flaticon-laptop",
   },
   {
     title: "Web Development",
+    href: "/services/web-development",
     image: "/assets/images/resource/service1-2.jpg",
     icon: "flaticon-health-check",
   },
   {
     title: "Digital Marketing",
+    href: "/services/seo-digital-marketing",
     image: "/assets/images/resource/service1-3.jpg",
     icon: "flaticon-promotion",
   },
   {
     title: "UI/UX Design",
+    href: "/services/ui-ux-design",
     image: "/assets/images/resource/service1-1.jpg",
     icon: "flaticon-laptop",
   },
   {
     title: "App Development",
+    href: "/services/mobile-app-development",
     image: "/assets/images/resource/service1-2.jpg",
     icon: "flaticon-health-check",
   },
   {
     title: "SEO Optimization",
+    href: "/services/seo-digital-marketing",
     image: "/assets/images/resource/service1-3.jpg",
     icon: "flaticon-promotion",
   },
@@ -72,7 +78,7 @@ const ServiceSection: React.FC = (): JSX.Element => {
                   <div className="inner-box">
                     <div className="image-box">
                       <figure className="image">
-                        <Link href="/page-service-details">
+                        <Link href={item.href}>
                           <Image
                             src={item.image}
                             alt={item.title}
@@ -87,7 +93,7 @@ const ServiceSection: React.FC = (): JSX.Element => {
                     </div>
                     <div className="content-box">
                       <h4 className="title">
-                        <Link href="/page-service-details">{item.title}</Link>
+                        <Link href={item.href}>{item.title}</Link>
                       </h4>
                       <div className="text">
                         There are many variations of passages of Lorem Ipsum
@@ -107,7 +113,7 @@ const ServiceSection: React.FC = (): JSX.Element => {
                         </li>
                       </ul>
                       <div className="btn-box">
-                        <Link href="/page-service-details" className="readmore">
+                        <Link href={item.href} className="readmore">
                           Discover More
                         </Link>
                       </div>
